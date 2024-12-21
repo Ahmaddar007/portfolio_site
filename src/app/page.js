@@ -10,7 +10,10 @@ export default function Home() {
   return (
     <>
 
+
+
     <div>
+<img className="text-center mt-10 w-30" src="https://utfs.io/f/vm2okaME29juFEgsVdUcQOSuvKit5lyLh3ekTAU26V1IZrmE" />
       <Steps />
       <Heading />
       <Reviews />

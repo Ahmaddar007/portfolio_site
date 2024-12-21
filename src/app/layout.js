@@ -29,6 +29,7 @@ export default function RootLayout({ children }) {
       >
         <div className="fixed top-0 z-50 bg-red-600 w-full flex items-center flex-col justify-center">
 
+
           <h1 className="text-white font-semibold text-3xl text-center py-3" >Portfolio Under Development</h1>
 
         </div>
