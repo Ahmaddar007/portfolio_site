@@ -27,12 +27,33 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="fixed top-0 z-50 bg-red-600 w-full flex items-center flex-col justify-center">
 
+        <div className="fixed z-50 top-0 bg-white w-full">
 
-          <h1 className="text-white font-semibold text-3xl text-center py-3" >Portfolio Under Development</h1>
+            <div className="bg-red-600 w-full flex items-center flex-col justify-center">
+
+              <h1 className="text-white font-semibold text-xl text-center py-3" >Website Under Development</h1>
+
+            </div>
+
+            <div className="flex p-2 border-gray-400 border-b items-center justify-between">
+
+              <div>
+                <button className="py-2 px-3 rounded-lg bg-white text-white font-semibold">Contact</button>
+              </div>
+
+              <img className="text-center w-20" src="https://utfs.io/f/vm2okaME29juFEgsVdUcQOSuvKit5lyLh3ekTAU26V1IZrmE" />
+              <div>
+                <button className="py-2 px-3 rounded-lg bg-blue-600 text-white font-semibold">Contact</button>
+              </div>
+            </div>
+
 
         </div>
+
+
+
+
         {children}
       </body>
     </html>
