@@ -1,3 +1,4 @@
+
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -20,9 +21,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <div className="fixed top-0 z-50 bg-red-600 w-full flex items-center flex-col justify-center">
+
+          <h1 className="text-white font-semibold text-3xl text-center py-3" >Portfolio Under Development</h1>
+
+        </div>
         {children}
       </body>
     </html>
