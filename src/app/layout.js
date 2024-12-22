@@ -1,6 +1,7 @@
 
 import localFont from "next/font/local";
 import "./globals.css";
+import { Phone } from 'lucide-react';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -44,7 +45,9 @@ export default function RootLayout({ children }) {
 
               <img className="text-center w-20" src="https://utfs.io/f/vm2okaME29juFEgsVdUcQOSuvKit5lyLh3ekTAU26V1IZrmE" />
               <div>
-                <button className="py-2 px-3 rounded-lg bg-blue-600 text-white font-semibold">Contact</button>
+                <button className="py-2 px-3 rounded-lg bg-blue-600 flex gap-3 text-white font-semibold">
+                  <Phone className="w-5" />
+                   Contact</button>
               </div>
             </div>
 
