@@ -1,5 +1,6 @@
 'use client';
 
+import { AlignJustifyIcon } from 'lucide-react';
 import React from 'react';
 
 const Header = () => {
@@ -21,12 +22,9 @@ const Header = () => {
 
         {/* Contact Button */}
         <div>
-          <a
-            href="#contact"
-            className="bg-white text-blue-600 px-4 py-2 rounded-lg font-medium hover:bg-gray-100"
-          >
-            Contact
-          </a>
+         
+            <AlignJustifyIcon className='text-white font-semibold' />
+        
         </div>
       </header>
     </div>
