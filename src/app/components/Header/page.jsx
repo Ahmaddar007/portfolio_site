@@ -1,32 +1,64 @@
-'use client';
-
-import { AlignJustifyIcon } from 'lucide-react';
-import React from 'react';
+import { AlignJustify } from "lucide-react";
+import React from "react";
 
 const Header = () => {
   return (
-    <div className="bg-black sticky top-0 z-10 w-full text-white">
-      <header className="px-14 max-[425px]:px-5 w-full flex justify-between items-center py-4">
-        {/* Logo */}
-        <div className="text-2xl font-bold">
-          <a href="/" className=" max-[425px]:text-lg ">Logo</a>
-        </div>
+    <div className="shadow-custom flex justify-between items-center w-[90%] py-3 max-md:px-5 max-md:py-2 px-10 rounded-full z-10 shadow-md shadow-gray-400 fixed top-2 bg-gradient-to-r from-blue-700 via-blue-500 to-blue-800">
+      {/* Logo Section */}
+      <div className="flex items-center">
+        <a className="text-white text-2xl tracking-wide">Logo</a>
+      </div>
 
-        {/* Navigation Menu */}
-        <nav className="space-x-8 hidden md:flex">
-          <a href="#home" className="hover:underline underline-offset-8">Home</a>
-          <a href="#about" className="hover:underline underline-offset-8">About</a>
-          <a href="#services" className="hover:underline underline-offset-8">Services</a>
-          <a href="#blog" className="hover:underline underline-offset-8">Blog</a>
-        </nav>
+      {/* Placeholder for Menu */}
+      <div className="hidden lg:flex space-x-6 text-white font-semibold">
+        <a href="#home" className="hover:text-blue-200 transition-colors">
+          Home
+        </a>
+        <a href="#about" className="hover:text-blue-200 transition-colors">
+          About
+        </a>
+        <a href="#services" className="hover:text-blue-200 transition-colors">
+          Services
+        </a>
+        <a href="#contact" className="hover:text-blue-200 transition-colors">
+          Contact
+        </a>
+      </div>
 
-        {/* Contact Button */}
-        <div>
-         
-            <AlignJustifyIcon className='text-white font-semibold' />
-        
+      {/* Drawer Menu for Mobile */}
+
+      <div className="lg:hidden">
+        <div className="drawer drawer-end">
+          <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
+          <div className="flex justify-end items-center drawer-content">
+            <label
+              htmlFor="my-drawer-4"
+              className="drawer-button hover:cursor-pointer text-white p-2 rounded-full"
+            >
+              <AlignJustify size={24} />
+            </label>
+          </div>
+
+          {/* Sidebar Menu */}
+          <div className="drawer-side">
+            <label htmlFor="my-drawer-4" className="drawer-overlay"></label>
+            <ul className="menu bg-white text-gray-800 min-h-full w-80 p-6 space-y-4 shadow-lg">
+              <li className="hover:bg-blue-100 rounded-md transition-colors">
+                <a className="font-semibold text-lg">Sidebar Item 1</a>
+              </li>
+              <li className="hover:bg-blue-100 rounded-md transition-colors">
+                <a className="font-semibold text-lg">Sidebar Item 2</a>
+              </li>
+              <li className="hover:bg-blue-100 rounded-md transition-colors">
+                <a className="font-semibold text-lg">Sidebar Item 3</a>
+              </li>
+              <li className="hover:bg-blue-100 rounded-md transition-colors">
+                <a className="font-semibold text-lg">Sidebar Item 4</a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </header>
+      </div>
     </div>
   );
 };

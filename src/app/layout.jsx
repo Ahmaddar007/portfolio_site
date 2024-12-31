@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
+      <body className="flex flex-col items-center">
 
         <Header />
 

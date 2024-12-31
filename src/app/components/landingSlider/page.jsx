@@ -2,8 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 export default function LandingSlider() {
   const [isMobile, setIsMobile] = useState(false);
@@ -31,7 +29,16 @@ export default function LandingSlider() {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
-    arrows: false, // Ensures the navigation buttons are visible
+    arrows: false, // Hides arrows
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          dots: true,
+          autoplaySpeed: 3000, // Adjust speed for mobile
+        },
+      },
+    ],
   };
 
   // Images for desktop and mobile
@@ -46,15 +53,21 @@ export default function LandingSlider() {
   ];
 
   // Choose images based on screen size
-  const images = isMobile ? mobileImages : desktopImages;
+  // const images = isMobile ? mobileImages : desktopImages;
 
   return (
-    <Slider {...settings}>
-      {images.map((image, index) => (
-        <div key={index} className="w-screen overflow-hidden">
-          <img src={image} alt={`Slide ${index + 1}`} className="w-full max-[425px]:h-[80vh]" />
-        </div>
-      ))}
-    </Slider>
+    <div className="overflow-hidden w-screen">
+      <Slider {...settings}>
+        {desktopImages.map((image, index) => (
+          <div key={index} className="w-full h-[90vh] flex justify-center items-center bg-gray-100">
+            <img
+              src={image}
+              alt={`Slide ${index + 1}`}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        ))}
+      </Slider>
+    </div>
   );
 }
