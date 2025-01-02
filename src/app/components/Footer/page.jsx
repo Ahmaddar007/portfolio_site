@@ -1,19 +1,21 @@
+import { Button } from '@nextui-org/react'
 import React from 'react'
 
 const Footer = () => {
     return (
-        <section className="px-14 bg-white sm:pt-16 lg:pt-24">
+        <section className="px-[5%] pt-24 pb-8 bg-white">
             <div className="">
+
                 <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-12 gap-y-12 gap-x-8 xl:gap-x-12">
-                    <div className="col-span-2 md:col-span-4 xl:pr-8">
+                    <div className="col-span-2 space-y-5 md:col-span-4 xl:pr-8">
                         <img className="w-auto h-9" src="https://cdn.rareblocks.xyz/collection/celebration/images/logo.svg" alt="" />
 
-                        <p className="text-base leading-relaxed text-gray-600 mt-7">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
+                        <p className="text-base leading-relaxed text-gray-600">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
 
-                        <a href="#" title="" className="inline-flex items-center justify-center px-6 py-4 font-semibold text-white transition-all duration-200 bg-blue-600 rounded-md focus:bg-blue-700 mt-7">
-                           
+                        <Button className="rounded-full hover:bg-blue-700 bg-blue-600 p-7 font-semibold text-md text-white">
                             Contact us
-                        </a>
+                        </Button>
+                        
                     </div>
 
                     <div className="lg:col-span-2">
@@ -157,7 +159,7 @@ const Footer = () => {
                             <a
                                 href="#"
                                 title=""
-                                className="flex items-center justify-center text-gray-800 transition-all duration-200 bg-transparent border border-gray-300 rounded-full w-7 h-7 focus:bg-orange-600:text-white focus:border-orange-600"
+                                className="flex items-center justify-center text-gray-800 transition-all duration-200 bg-transparent border border-slate-300 rounded-full w-7 h-7 focus:bg-orange-600:text-white focus:border-orange-600"
                             >
                                 <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                                     <path
@@ -170,6 +172,7 @@ const Footer = () => {
                         </li>
                     </ul>
                 </div>
+
             </div>
         </section>
 
