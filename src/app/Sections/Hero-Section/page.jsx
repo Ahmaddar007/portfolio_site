@@ -3,7 +3,6 @@ import React from 'react'
 import 'animate.css';
 import { Button } from '@nextui-org/react';
 
-
 const Hero = () => {
   return (
     <div className="grid grid-cols-2 gap-10 px-[5%] py-20 bg-white">
@@ -20,12 +19,21 @@ const Hero = () => {
         <Button className="bg-blue-500 p-6 rounded-full text-white font-semibold text-md">Lorem Ipsum</Button>
       </div>
     </div>
+
+
     <div className="flex relative justify-center items-center">
-      <Shirt className='absolute left-1/3 bottom-36 z-20 animate__fadeInUp animate__animated animate__faster text-blue-500 h-auto w-1/3' />
-      <Box className='animate__fadeInBottomRight animate__animated h-auto w-16 absolute left-20 top-10' />
-      <Box className='animate__fadeInBottomLeft animate__animated h-auto w-16 absolute right-20 top-10' />
-      <img className='w-4/6 relative top-32 animate__fadeIn animate__animated' src="https://utfs.io/f/vm2okaME29juiT8270oP2y4xW3U9Qus1HzcjeaV8D7KTdJkG" />
+
+      <div className='border absolute mt-5 border-green-500 justify-center items-center flex'>
+        <img className='z-20 text-blue-500 h-auto w-3/4' src="https://utfs.io/f/vm2okaME29juPLFLxSyTd6rYMlUazXEvVy5HbfupxD9mPG4i" />
+        <img className='absolute -top-52 -left-32  z-20 text-blue-500 h-auto w-52' src="https://utfs.io/f/vm2okaME29jujXBrzo30jh5ZniMeLTuItDbWrUYSP9pQloEx" />
+        <img className='absolute -top-48 right-0  z-20 text-blue-500 h-auto w-28' src="https://utfs.io/f/vm2okaME29juWyYWROfTcLyZDikjAtpxHUVG1hRvJma54gOQ" />
+      </div>
+
+      <img className='top-0 border border-red-500 w-3/4' src="https://utfs.io/f/vm2okaME29juuqZlNVgjyJeHg1tY6R4mbkVlD2EFOcZrNILS" />
+
     </div>
+
+
   </div>
   
   )

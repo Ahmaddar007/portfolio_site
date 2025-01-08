@@ -4,10 +4,10 @@ import LandingSlider from "./components/landingSlider/page";
 import Accordian from "./Sections/Accordian/page";
 import Carousel from "./Sections/Carousel/page";
 import ContactForm from "./Sections/Contact-Form/page";
-import FancyText from "./Sections/FancyTexxt/page";
 import Features from "./Sections/Feature-Section/page";
 import Hero from "./Sections/Hero-Section/page";
 import NewsLetter from "./Sections/NewsLetter/page";
+import Portfolio from "./Sections/Portfolio/page";
 import ServiceCards from "./Sections/Service-Cards/page";
 
 export default function Home() {
@@ -15,12 +15,13 @@ export default function Home() {
    <>
    <LandingSlider />
    <Features />
-   <Carousel />
    <Hero />
+   <Carousel />
+   
    <ServiceCards />
-   <FancyText />
    {/* <Accordian /> */}
    <ContactForm />
+   {/* <Portfolio /> */}
    <NewsLetter />
    </>
   );

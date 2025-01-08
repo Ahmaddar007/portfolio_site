@@ -27,7 +27,7 @@ export default function LandingSlider() {
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 2000,
     arrows: false, // Hides arrows
     responsive: [
@@ -43,13 +43,13 @@ export default function LandingSlider() {
 
   // Images for desktop and mobile
   const desktopImages = [
-    "https://utfs.io/f/vm2okaME29ju6OhehU10uGoJ0xy9WXwKegFBNbUEhc5pzjZ4", // Desktop image 1
-    "https://utfs.io/f/vm2okaME29ju6OhehU10uGoJ0xy9WXwKegFBNbUEhc5pzjZ4", // Desktop image 2
+    "https://utfs.io/f/vm2okaME29jurocXadWpIL6EK5nZxkbWCUyR4YGwsvFO9qXS", // Desktop image 1
+    "https://utfs.io/f/vm2okaME29jurocXadWpIL6EK5nZxkbWCUyR4YGwsvFO9qXS", // Desktop image 2
   ];
 
   const mobileImages = [
-    "https://utfs.io/f/vm2okaME29juIf21hi9rumr8HTLDGP7M1wWp2qZcBhf5lR0n", // Mobile image 1
-    "https://utfs.io/f/vm2okaME29juIf21hi9rumr8HTLDGP7M1wWp2qZcBhf5lR0n", // Mobile image 2
+    "https://utfs.io/f/vm2okaME29jurocXadWpIL6EK5nZxkbWCUyR4YGwsvFO9qXS", // Mobile image 1
+    "https://utfs.io/f/vm2okaME29jurocXadWpIL6EK5nZxkbWCUyR4YGwsvFO9qXS", // Mobile image 2
   ];
 
   // Choose images based on screen size

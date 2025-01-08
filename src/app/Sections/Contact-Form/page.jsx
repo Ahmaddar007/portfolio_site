@@ -11,7 +11,7 @@ const ContactForm = () => {
       {/* Left Section */}
       <div className="flex flex-col gap-6">
         <h1 className="text-3xl font-bold text-blue-600">
-          Welcome to Essentials, the World's Most Powerful SaaS Solution
+        Have questions ? Fill out our form, and we’ll get back to you soon!
         </h1>
         <p className="text-gray-600 leading-relaxed">
           Essentials is designed with your customers in mind, so you can track and analyze all your data in one central location. There are no limits to how you can look at your data.

@@ -23,6 +23,12 @@ const Carousel = () => {
 
       return (
         <div className="w-full">
+
+          <div className='my-10'>
+            <h1 className='kalam_font text-2xl text-blue-800 text-center'>Our Collections</h1>
+            <h1 className='text-4xl text-black font-bold text-center'>Go through Our Ultra Collections</h1>
+          </div>
+
           <Slider {...settings}>
             {slides.map((slide, index) => (
               <div key={index} className="p-4">
