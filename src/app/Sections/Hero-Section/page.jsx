@@ -1,4 +1,3 @@
-import { Box, Shirt } from 'lucide-react'
 import React from 'react'
 import 'animate.css';
 import { Button } from '@nextui-org/react';
