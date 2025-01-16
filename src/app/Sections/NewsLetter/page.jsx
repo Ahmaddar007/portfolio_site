@@ -3,47 +3,61 @@ import React from "react";
 
 const NewsLetter = () => {
   return (
-    <div className="w-full">
-      <div class="relative bg-gradient-to-b from-blue-600 to-blue-500">
-        <div class="absolute inset-x-0 bottom-0">
+    <div className="w-full bg-gradient-to-b from-blue-600 to-blue-500 pt-44 relative">
+
+      <div className="absolute w-full -top-32 z-10 px-[5%]" >
+
+        <div className='border flex justify-center rounded-lg overflow-hidden shadow-sm shadow-black border-slate-50'>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d217897.6204657345!2d72.92448952265913!3d31.423759040174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x392242a895a55ca9%3A0xdec58f88932671c6!2sFaisalabad%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1737018854309!5m2!1sen!2s"
+            className='w-full h-64' allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+      </div>
+
+
+      <div className="relative">
+        <div className="absolute inset-x-0 bottom-0">
           <svg
             viewBox="0 0 224 12"
             fill="currentColor"
-            class="w-full -mb-1 text-white"
+            className="w-full -mb-1 text-white"
             preserveAspectRatio="none"
           >
             <path d="M0,0 C48.8902582,6.27314026 86.2235915,9.40971039 112,9.40971039 C137.776408,9.40971039 175.109742,6.27314026 224,0 L224,12.0441132 L0,12.0441132 L0,0 Z"></path>
           </svg>
         </div>
-        <div class="px-4 py-16  md:px-24 lg:px-8 lg:py-20">
-          <div class="relative max-w-2xl sm:mx-auto sm:max-w-xl md:max-w-2xl sm:text-center">
-            <h2 class="mb-6 font-sans text-3xl text-center font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
+
+        <div className="px-4 py-16">
+          <div className="relative max-w-2xl mx-auto text-center">
+            <h2 className="mb-6 font-sans text-3xl font-bold tracking-tight text-white">
               Subscribe to our newsletter
             </h2>
-            <p class="mb-6 text-base text-indigo-200 md:text-lg">
+            <p className="mb-6 text-base text-indigo-200">
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
               accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
               quae. explicabo. Sed ut perspiciatis unde omnis.
             </p>
-            <form class="flex flex-col items-center w-full mb-4 md:flex-row md:px-16">
+            <form className="flex flex-col items-center w-full mb-4">
               <input
                 placeholder="Email"
                 required=""
                 type="text"
-                class="flex-grow w-full h-12 px-4 mb-3 text-black transition duration-200 border-2 border-transparent rounded appearance-none md:mr-2 md:mb-0 bg-white focus:border-teal-accent-700 focus:outline-none focus:shadow-outline"
+                className="flex-grow w-full h-12 px-4 mb-3 text-black transition duration-200 border-2 border-transparent rounded appearance-none bg-white focus:border-teal-accent-700 focus:outline-none focus:shadow-outline"
               />
               <Button className="bg-blue-800 p-6 text-white rounded-md">
                 Subscribe
               </Button>
             </form>
-            <p class="max-w-md mb-10 text-xs tracking-wide text-indigo-100 sm:text-sm sm:mx-auto md:mb-16">
+            <p className="w-full text-center mb-10 text-xs tracking-wide text-indigo-100">
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
               accusantium doloremque.
             </p>
             <a
               href="/"
               aria-label="Scroll down"
-              class="flex items-center justify-center w-10 h-10 mx-auto text-white duration-300 transform border border-slate-300 rounded-full hover:text-teal-accent-400 hover:border-teal-accent-400 hover:shadow hover:scale-110"
+              className="flex items-center justify-center w-10 h-10 mx-auto text-white duration-300 transform border border-slate-300 rounded-full hover:text-teal-accent-400 hover:border-teal-accent-400 hover:shadow hover:scale-110"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

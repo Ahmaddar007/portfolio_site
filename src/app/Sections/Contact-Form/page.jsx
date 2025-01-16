@@ -7,7 +7,7 @@ import CirlceImage from '../../../../public/images/Circles.png'
 
 const ContactForm = () => {
   return (
-    <div className="grid grid-cols-2 gap-8 px-[5%] py-44 bg-slate-50">
+    <div className="grid grid-cols-2 gap-8 px-[5%] pt-44 pb-72 bg-slate-50">
       {/* Left Section */}
       <div className="flex flex-col gap-6">
         <h1 className="text-3xl font-bold text-blue-600">
@@ -68,6 +68,7 @@ const ContactForm = () => {
 
 
       </div>
+
     </div>
   );
 };

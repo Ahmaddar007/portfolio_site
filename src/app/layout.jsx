@@ -1,8 +1,8 @@
 import "./globals.css";
 import Footer from "./components/Footer/page";
 import Header from "./components/Header/page";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
 import { NextUIProvider } from "@nextui-org/react";
 
 export default function RootLayout({ children }) {

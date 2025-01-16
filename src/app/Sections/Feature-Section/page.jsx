@@ -7,7 +7,7 @@ import { TbStarsFilled } from "react-icons/tb";
 const Features = () => {
   return (
     <div className="w-full relative bottom-28 px-6 md:px-[10%] py-12">
-      <div className="w-full grid grid-cols-2 bg-blue-400 rounded-lg shadow-xl">
+      <div className="w-full grid grid-cols-2 bg-blue-500 rounded-lg shadow-xl">
         {/* first */}
         <div className="py-3">
           <div className="flex gap-8 py-5 border-r border-white justify-center items-center">

@@ -4,7 +4,7 @@ import { Button } from "@nextui-org/react";
 
 const Header = () => {
   return (
-    <div className="flex justify-between items-center w-[90%] py-2 rounded-full z-50 shadow-md fixed top-2 bg-blue-400">
+    <div className="flex justify-between items-center w-[90%] py-2 rounded-full z-50 shadow-md fixed top-2 bg-blue-500">
 
       {/* Logo Section */}
       <div className="flex items-center">
