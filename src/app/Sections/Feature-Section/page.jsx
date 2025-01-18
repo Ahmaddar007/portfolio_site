@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
 import { Avatar, AvatarGroup } from "@nextui-org/react";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa"; // Example icons
 import { TbStarsFilled } from "react-icons/tb";
 import CountUp from "react-countup"; // Import CountUp
@@ -9,43 +9,49 @@ import CountUp from "react-countup"; // Import CountUp
 const Features = () => {
   // State to control if the section is in view
   const [inView, setInView] = useState(false);
-  
-  // Ref for the section
-  const sectionRef = useRef(null);
-  
-  // Intersection Observer setup
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
         if (entry.isIntersecting) {
           setInView(true); // Trigger animation once the section is in view
+          observer.disconnect(); // Stop observing after triggering the animation
         }
       },
       { threshold: 0.5 } // Adjust this to control when the section is considered in view
     );
-    
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+
+    const section = document.getElementById("features-section");
+    if (section) observer.observe(section);
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
+      if (section) observer.unobserve(section);
     };
   }, []);
 
   return (
-    <div ref={sectionRef} className="w-full relative bottom-28 px-[10%] py-12">
+    <div
+      id="features-section"
+      className="w-full relative bottom-28 px-[10%] py-12"
+    >
       <div className="w-full grid grid-cols-2 bg-blue-500 rounded-lg shadow-xl">
         {/* first */}
         <div className="py-3">
           <div className="flex gap-8 py-5 border-r border-white justify-center items-center">
             <AvatarGroup isBordered max={3}>
-              <Avatar size="lg" src="https://i.pravatar.cc/150?u=a042581f4e29026024d" />
-              <Avatar size="lg" src="https://i.pravatar.cc/150?u=a04258a2462d826712d" />
-              <Avatar size="lg" src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
+              <Avatar
+                size="lg"
+                src="https://i.pravatar.cc/150?u=a042581f4e29026024d"
+              />
+              <Avatar
+                size="lg"
+                src="https://i.pravatar.cc/150?u=a04258a2462d826712d"
+              />
+              <Avatar
+                size="lg"
+                src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
+              />
             </AvatarGroup>
             <h3 className="text-white text-3xl font-normal">
               {inView && <CountUp end={4.8} duration={2.5} decimals={1} />}+

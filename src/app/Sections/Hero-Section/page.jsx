@@ -1,10 +1,12 @@
-import React from "react";
+"use client"
+
+import React, { useState } from "react";
 import { Button } from "@nextui-org/react";
 import useIntersectionObserver from "@react-hook/intersection-observer";
 
 const Hero = () => {
-  const targetRef = React.useRef(null);
-  const { isIntersecting } = useIntersectionObserver(targetRef);
+  const [target, setTarget] = useState(null); // State to manage the target element
+  const { isIntersecting } = useIntersectionObserver(target);
 
   return (
     <div className="grid grid-cols-2 gap-10 px-[5%] py-20 bg-white">
@@ -17,7 +19,7 @@ const Hero = () => {
           and timeless pieces inspired by the beloved character. Celebrate the
           charm and nostalgia.
         </p>
-        <div ref={targetRef} className="flex gap-3">
+        <div ref={(el) => setTarget(el)} className="flex gap-3">
           <Button
             className={`bg-blue-600 p-6 rounded-full text-white font-semibold text-md transition-transform duration-1000 ease-out ${
               isIntersecting ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"

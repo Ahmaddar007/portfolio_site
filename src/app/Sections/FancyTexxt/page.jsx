@@ -1,10 +1,12 @@
+"use client"
+
 import { Button } from "@nextui-org/react";
 import useIntersectionObserver from "@react-hook/intersection-observer";
-import React from "react";
+import React, { useState } from "react";
 
 const FancyText = () => {
-  const targetRef = React.useRef(null);
-  const { isIntersecting } = useIntersectionObserver(targetRef);
+  const [target, setTarget] = useState(null); // State to track the DOM element
+  const { isIntersecting } = useIntersectionObserver(target);
 
   return (
     <div className="mt-20">
@@ -18,7 +20,10 @@ const FancyText = () => {
         </div>
 
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-6">
-          <div className="relative" ref={targetRef}>
+          <div
+            className="relative"
+            ref={(el) => setTarget(el)} // Set the target dynamically
+          >
             <div className="flex items-center justify-center mb-5 -space-x-2">
               <img
                 loading="lazy"
@@ -69,7 +74,7 @@ const FancyText = () => {
 
               <p
                 className={`text-4xl font-bold text-gray-800 ${
-                  isIntersecting ? 'animate-fadeInUp' : 'opacity-0'
+                  isIntersecting ? "animate-fadeInUp" : "opacity-0"
                 }`}
               >
                 Discover your potential
@@ -89,14 +94,15 @@ const FancyText = () => {
                   </svg>
                   <span className="relative">with us</span>
                 </span>
-
               </p>
 
               <div className="flex mt-5 flex-wrap justify-center gap-6">
-
-                <Button className="p-5 font-bold bg-blue-600 text-white rounded-full">Get Started</Button>
-                <Button className="p-5 font-bold bg-blue-600 text-white rounded-full">Contact Now</Button>
-                
+                <Button className="p-5 font-bold bg-blue-600 text-white rounded-full">
+                  Get Started
+                </Button>
+                <Button className="p-5 font-bold bg-blue-600 text-white rounded-full">
+                  Contact Now
+                </Button>
               </div>
             </div>
           </div>

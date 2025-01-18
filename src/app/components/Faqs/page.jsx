@@ -1,14 +1,11 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Accordion, AccordionItem } from "@nextui-org/react";
-import useIntersectionObserver from "@react-hook/intersection-observer";
 
 export default function Faqs() {
-    const targetRef = React.useRef(null);
-    const { isIntersecting } = useIntersectionObserver(targetRef);
-
-    const [selectedKeys, setSelectedKeys] = React.useState(new Set(["1"]));
+    const [isIntersecting, setIsIntersecting] = useState(false); // State to track visibility
+    const [selectedKeys, setSelectedKeys] = useState(new Set(["1"])); // Accordion state
 
     const faqData = [
         {
@@ -31,10 +28,29 @@ export default function Faqs() {
         },
     ];
 
+    useEffect(() => {
+        const target = document.getElementById("faq-section"); // Access target element by ID
+        const observer = new IntersectionObserver(
+            (entries) => {
+                const entry = entries[0];
+                if (entry.isIntersecting) {
+                    setIsIntersecting(true); // Mark the element as visible
+                    observer.disconnect(); // Stop observing once visible
+                }
+            },
+            { threshold: 0.5 } // Adjust visibility threshold
+        );
+
+        if (target) observer.observe(target);
+
+        return () => {
+            if (target) observer.disconnect();
+        };
+    }, []);
+
     return (
         <div
-            id="abcd"
-            ref={targetRef}
+            id="faq-section"
             className="px-[10%] w-full py-20 bg-slate-50"
         >
             {/* FAQ Title and Description */}
@@ -44,7 +60,7 @@ export default function Faqs() {
                 </h2>
                 <p
                     className={`text-lg text-gray-600 mt-4 max-w-2xl mx-auto leading-relaxed transition-opacity duration-700 ${
-                        isIntersecting ? 'animate-fadeInUp' : 'opacity-0'
+                        isIntersecting ? "animate-fadeInUp" : "opacity-0"
                     }`}
                 >
                     Your questions about our online tailoring services, answered
