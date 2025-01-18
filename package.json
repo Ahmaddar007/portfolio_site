@@ -12,6 +12,7 @@
     "@nextui-org/react": "^2.6.10",
     "@react-hook/intersection-observer": "^3.1.2",
     "animate.css": "^4.1.1",
+    "aos": "^3.0.0-beta.6",
     "embla-carousel-react": "^8.5.2",
     "framer-motion": "^11.15.0",
     "lucide-react": "^0.469.0",

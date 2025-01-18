@@ -1,71 +1,94 @@
-"use client"
+"use client";
 
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import { Button } from "@nextui-org/react";
-import useIntersectionObserver from "@react-hook/intersection-observer";
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import AOS styles
 
 const Hero = () => {
-  const [target, setTarget] = useState(null); // State to manage the target element
-  const { isIntersecting } = useIntersectionObserver(target);
+  // Initialize AOS with `once: false`
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration in milliseconds
+      easing: "ease-out", // Easing function for animations
+      once: false, // Trigger animations every time the section enters the viewport
+      mirror: true, // Re-trigger animations when scrolling back up
+    });
+  }, []);
 
   return (
     <div className="grid grid-cols-2 gap-10 px-[5%] py-20 bg-white">
+      {/* Left Content */}
       <div className="flex relative flex-col justify-center space-y-6">
-        <h2 className="text-blue-600 text-6xl !font-semibold">
-          Doraemon Collection
+        <h2
+          className="text-blue-600 text-8xl leading-tight !font-extrabold"
+          data-aos="fade-right"
+        >
+          Daryaft Collection
         </h2>
-        <p className="text-gray-700 font-normal text-lg leading-relaxed">
+        <p
+          className="text-gray-700 font-normal text-lg leading-relaxed"
+          data-aos="fade-up"
+        >
           Explore our exclusive Doraemon Collection, featuring iconic designs
           and timeless pieces inspired by the beloved character. Celebrate the
           charm and nostalgia.
         </p>
-        <div ref={(el) => setTarget(el)} className="flex gap-3">
-          <Button
-            className={`bg-blue-600 p-6 rounded-full text-white font-semibold text-md transition-transform duration-1000 ease-out ${
-              isIntersecting ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-            }`}
-            style={{ transitionDelay: "0ms" }}
-          >
+        <div className="flex gap-3" data-aos="fade-up" data-aos-delay="300">
+          <Button className="bg-blue-600 p-6 rounded-full text-white font-semibold text-md">
             Lorem Ipsum
           </Button>
-          <Button
-            className={`bg-blue-500 p-6 rounded-full text-white font-semibold text-md transition-transform duration-1000 ease-out ${
-              isIntersecting ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-            }`}
-            style={{ transitionDelay: "500ms" }}
-          >
+          <Button className="bg-blue-500 p-6 rounded-full text-white font-semibold text-md">
             Lorem Ipsum
           </Button>
         </div>
       </div>
 
-      <div className="flex relative justify-center items-center">
+      {/* Right Content */}
+      <div
+        className="flex relative justify-center items-center"
+        data-aos="fade-left"
+      >
+        {/* Overlay Images */}
         <div className="absolute mt-5 justify-center items-center flex">
           <img
             className="z-20 text-blue-500 h-auto w-3/4"
             src="https://utfs.io/f/vm2okaME29juPLFLxSyTd6rYMlUazXEvVy5HbfupxD9mPG4i"
+            alt="Main"
           />
           <img
             className="absolute -top-52 -left-32 z-20 text-blue-500 h-auto w-52"
             src="https://utfs.io/f/vm2okaME29jujXBrzo30jh5ZniMeLTuItDbWrUYSP9pQloEx"
+            alt="Decoration 1"
+            data-aos="zoom-in"
           />
           <img
             className="absolute -top-48 right-0 z-20 text-blue-500 h-auto w-28"
             src="https://utfs.io/f/vm2okaME29juWyYWROfTcLyZDikjAtpxHUVG1hRvJma54gOQ"
+            alt="Decoration 2"
+            data-aos="zoom-in"
+            data-aos-delay="200"
           />
           <img
             className="absolute -bottom-36 -left-16 z-20 text-blue-500 h-auto w-28"
             src="https://utfs.io/f/vm2okaME29jugD62rkFvp84ItSReTN70WyCdXDYm6raFOQnZ"
+            alt="Decoration 3"
+            data-aos="zoom-in"
+            data-aos-delay="400"
           />
           <img
             className="absolute -bottom-40 -right-16 z-20 text-blue-500 h-auto w-28"
             src="https://utfs.io/f/vm2okaME29jue6kQ1cmy38BTF1VR6JD7n2fXHwLbmruoUCMk"
+            alt="Decoration 4"
+            data-aos="zoom-in"
+            data-aos-delay="600"
           />
         </div>
 
         <img
           className="top-0 w-3/4"
           src="https://utfs.io/f/vm2okaME29juuqZlNVgjyJeHg1tY6R4mbkVlD2EFOcZrNILS"
+          alt="Main Hero"
         />
       </div>
     </div>
