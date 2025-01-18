@@ -57,11 +57,11 @@ const FancyText = () => {
               />
             </div>
 
-            <div className="mt-6 m-auto space-y-6 w-full">
-              <h1 className="text-center text-4xl font-bold text-gray-800 dark:text-white md:text-5xl">
+            <div className="w-full">
+              <h1 className="text-center text-2xl font-bold text-gray-800">
                 Our Services
               </h1>
-              <p className="mt-1 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
+              <p className="text-4xl font-bold text-gray-900">
                 Discover your potential
                 <span className="px-2 py-1 relative inline-block">
                   <svg
@@ -82,10 +82,10 @@ const FancyText = () => {
               </p>
 
 
-              <div className="flex flex-wrap justify-center gap-6">
+              <div className="flex mt-5 flex-wrap justify-center gap-6">
                 <a
                   href="#"
-                  className="relative flex h-12 items-center justify-center px-8 before:absolute before:inset-0 before:rounded-full before:bg-blue-700 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95"
+                  className="relative flex h-12 items-center justify-center px-8 before:absolute before:inset-0 before:rounded-full before:bg-blue-700 before:transition before:duration-300 hover:before:scale-105"
                 >
                   <span className="relative text-base font-semibold text-white">
                     Get Started
@@ -93,7 +93,7 @@ const FancyText = () => {
                 </a>
                 <a
                   href="#"
-                  className="relative flex h-12 items-center justify-center px-8 before:absolute before:inset-0 before:rounded-full before:bg-blue-500 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95"
+                  className="relative flex h-12 items-center justify-center px-8 before:absolute before:inset-0 before:rounded-full before:bg-blue-500 before:transition before:duration-300 hover:before:scale-105"
                 >
                   <span className="relative text-base font-semibold text-white">
                     More about

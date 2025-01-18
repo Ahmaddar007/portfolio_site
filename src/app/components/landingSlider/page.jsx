@@ -56,8 +56,8 @@ export default function LandingSlider() {
   // const images = isMobile ? mobileImages : desktopImages;
 
   return (
-    <div className="overflow-hidden w-screen">
-      <img className="w-full h-screen" src="https://utfs.io/f/vm2okaME29jurocXadWpIL6EK5nZxkbWCUyR4YGwsvFO9qXS" />
+    <div className="overflow-hidden w-full">
+      <img className="w-full h-auto" src="https://utfs.io/f/vm2okaME29jurocXadWpIL6EK5nZxkbWCUyR4YGwsvFO9qXS" />
       {/* <Slider {...settings}>
         {desktopImages.map((image, index) => (
           <div key={index} className="w-full h-[90vh] flex justify-center items-center bg-gray-100">

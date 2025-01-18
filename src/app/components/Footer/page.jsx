@@ -12,7 +12,7 @@ const Footer = () => {
 
                         <p className="text-base leading-relaxed text-gray-600">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
 
-                        <Button className="rounded-full hover:bg-blue-700 bg-blue-600 p-7 font-semibold text-md text-white">
+                        <Button className="rounded-full hover:bg-blue-700 bg-blue-600 p-5 font-semibold text-md text-white">
                             Contact us
                         </Button>
                         

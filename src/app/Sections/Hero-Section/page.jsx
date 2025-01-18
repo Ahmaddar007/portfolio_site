@@ -6,10 +6,9 @@ const Hero = () => {
   return (
     <div className="grid grid-cols-2 gap-10 px-[5%] py-20 bg-white">
     <div className="flex relative flex-col justify-center space-y-6">
-      <h2 className="kalam_font text-blue-600 text-6xl !font-semibold ">
+      <h2 className="text-blue-600 text-6xl !font-semibold ">
         Doraemon Collection
       </h2>
-      <h2 className='text-gray-800 font-bold text-2xl'> Lorem Ipsum Doloe Emir Point Lars Dir Hexa sudo idr </h2>
       <p className="text-gray-700 font-normal text-lg leading-relaxed">
         Explore our exclusive Doraemon Collection, featuring iconic designs and timeless pieces inspired by the beloved character. Celebrate the charm and nostalgia.
       </p>

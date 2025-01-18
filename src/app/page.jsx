@@ -1,5 +1,6 @@
 "use client"
 
+import Faqs from "./components/Faqs/page";
 import LandingSlider from "./components/landingSlider/page";
 import ContactForm from "./Sections/Contact-Form/page";
 import Features from "./Sections/Feature-Section/page";
@@ -17,6 +18,7 @@ export default function Home() {
    <Hero />
    <ServiceCards />
    {/* <Portfolio /> */}
+   <Faqs />
    <ContactForm />
    {/* <MapSection /> */}
    <NewsLetter />

@@ -39,17 +39,21 @@ const NewsLetter = () => {
               accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
               quae. explicabo. Sed ut perspiciatis unde omnis.
             </p>
-            <form className="flex flex-col items-center w-full mb-4">
+
+
+            <form className="flex rounded-2xl overflow-hidden justify-center items-center w-full mb-4">
               <input
                 placeholder="Email"
                 required=""
                 type="text"
-                className="flex-grow w-full h-12 px-4 mb-3 text-black transition duration-200 border-2 border-transparent rounded appearance-none bg-white focus:border-teal-accent-700 focus:outline-none focus:shadow-outline"
+                className="flex-grow w-full h-12 px-4 text-black transition duration-200 border-2 border-transparent appearance-none bg-white focus:border-teal-accent-700 focus:outline-none focus:shadow-outline"
               />
-              <Button className="bg-blue-800 p-6 text-white rounded-md">
+              <Button className="bg-blue-800 p-6 text-white rounded-none">
                 Subscribe
               </Button>
             </form>
+
+
             <p className="w-full text-center mb-10 text-xs tracking-wide text-indigo-100">
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
               accusantium doloremque.
