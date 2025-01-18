@@ -46,17 +46,6 @@ const Contact = () => {
               aria-label="Message"
             ></textarea>
 
-            <div className="flex justify-between">
-              {/* <input
-                className="shadow bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                type="submit"
-                value="Send ➤"
-              />
-              <input
-                className="shadow bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                type="reset"
-              /> */}
-            </div>
           </form>
         </div>
       </div>

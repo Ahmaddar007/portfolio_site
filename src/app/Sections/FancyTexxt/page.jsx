@@ -1,6 +1,11 @@
+import { Button } from "@nextui-org/react";
+import useIntersectionObserver from "@react-hook/intersection-observer";
 import React from "react";
 
 const FancyText = () => {
+  const targetRef = React.useRef(null);
+  const { isIntersecting } = useIntersectionObserver(targetRef);
+
   return (
     <div className="mt-20">
       <div className="relative py-16">
@@ -13,8 +18,8 @@ const FancyText = () => {
         </div>
 
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-6">
-          <div className="relative">
-            <div className="flex items-center justify-center -space-x-2">
+          <div className="relative" ref={targetRef}>
+            <div className="flex items-center justify-center mb-5 -space-x-2">
               <img
                 loading="lazy"
                 width="400"
@@ -61,7 +66,12 @@ const FancyText = () => {
               <h1 className="text-center text-2xl font-bold text-gray-800">
                 Our Services
               </h1>
-              <p className="text-4xl font-bold text-gray-900">
+
+              <p
+                className={`text-4xl font-bold text-gray-800 ${
+                  isIntersecting ? 'animate-fadeInUp' : 'opacity-0'
+                }`}
+              >
                 Discover your potential
                 <span className="px-2 py-1 relative inline-block">
                   <svg
@@ -71,38 +81,23 @@ const FancyText = () => {
                   >
                     <path
                       d="M6 6.4c16.8 16.8 380.8-11.2 397.6 5.602"
-                      stroke-width="12"
+                      strokeWidth="12"
                       fill="none"
-                      fill-rule="evenodd"
-                      stroke-linecap="round"
+                      fillRule="evenodd"
+                      strokeLinecap="round"
                     ></path>
                   </svg>
                   <span className="relative">with us</span>
                 </span>
+
               </p>
 
-
               <div className="flex mt-5 flex-wrap justify-center gap-6">
-                <a
-                  href="#"
-                  className="relative flex h-12 items-center justify-center px-8 before:absolute before:inset-0 before:rounded-full before:bg-blue-700 before:transition before:duration-300 hover:before:scale-105"
-                >
-                  <span className="relative text-base font-semibold text-white">
-                    Get Started
-                  </span>
-                </a>
-                <a
-                  href="#"
-                  className="relative flex h-12 items-center justify-center px-8 before:absolute before:inset-0 before:rounded-full before:bg-blue-500 before:transition before:duration-300 hover:before:scale-105"
-                >
-                  <span className="relative text-base font-semibold text-white">
-                    More about
-                  </span>
-                </a>
+
+                <Button className="p-5 font-bold bg-blue-600 text-white rounded-full">Get Started</Button>
+                <Button className="p-5 font-bold bg-blue-600 text-white rounded-full">Contact Now</Button>
+                
               </div>
-
-
-
             </div>
           </div>
         </div>

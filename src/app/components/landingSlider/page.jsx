@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Slider from "react-slick";
+// import Slider from "react-slick";
 
 export default function LandingSlider() {
   // const [isMobile, setIsMobile] = useState(false);

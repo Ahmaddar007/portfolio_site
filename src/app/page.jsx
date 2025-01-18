@@ -1,13 +1,12 @@
 "use client"
 
+import Customize_Section from "./components/Customize_section/page";
 import Faqs from "./components/Faqs/page";
 import LandingSlider from "./components/landingSlider/page";
 import ContactForm from "./Sections/Contact-Form/page";
 import Features from "./Sections/Feature-Section/page";
 import Hero from "./Sections/Hero-Section/page";
-import MapSection from "./Sections/MapSection/page";
 import NewsLetter from "./Sections/NewsLetter/page";
-// import Portfolio from "./Sections/Portfolio/page";
 import ServiceCards from "./Sections/Service-Cards/page";
 
 export default function Home() {
@@ -16,11 +15,11 @@ export default function Home() {
    <LandingSlider />
    <Features />
    <Hero />
+   <Customize_Section />
    <ServiceCards />
    {/* <Portfolio /> */}
    <Faqs />
    <ContactForm />
-   {/* <MapSection /> */}
    <NewsLetter />
    </>
   );
