@@ -1,3 +1,5 @@
+"use client"
+
 import { Avatar, AvatarGroup } from "@nextui-org/react";
 import React, { useEffect, useState, useRef } from "react";
 import { FaStar } from "react-icons/fa"; // Example icons
