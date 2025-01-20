@@ -33,12 +33,13 @@ const Features = () => {
   return (
     <div
       id="features-section"
-      className="w-full relative bottom-28 px-[10%] py-12"
+      className="-mt-24 w-full max-[770px]:px-[5%] px-[10%] py-12"
     >
-      <div className="w-full grid grid-cols-2 bg-blue-500 rounded-lg shadow-xl">
+      <div className="w-full grid grid-cols-2 max-[770px]:flex bg-blue-500 rounded-lg shadow-xl">
+
         {/* first */}
-        <div className="py-3">
-          <div className="flex gap-8 py-5 border-r border-white justify-center items-center">
+        <div className="w-full py-3">
+          <div className="flex gap-8 py-5 border-r max-[770px]:border-r-3 border-white justify-center items-center">
             <AvatarGroup isBordered max={3}>
               <Avatar
                 size="lg"
@@ -60,7 +61,7 @@ const Features = () => {
         </div>
 
         {/* second */}
-        <div className="grid grid-cols-2 py-3 justify-center items-center">
+        <div className="max-[770px]:hidden grid grid-cols-2 py-3 justify-center items-center">
           <div className="flex py-5 border-r border-white items-center justify-center">
             <TbStarsFilled className="w-28 text-white h-16" />
             <h3 className="text-white text-3xl font-normal">
@@ -75,6 +76,7 @@ const Features = () => {
             </h3>
           </div>
         </div>
+        
       </div>
     </div>
   );

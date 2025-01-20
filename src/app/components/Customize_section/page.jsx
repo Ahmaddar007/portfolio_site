@@ -21,7 +21,17 @@ export default function CustomizeSection() {
     centerMode: true,
     centerPadding: "0",
     beforeChange: (current, next) => setActiveSlide(next),
+    responsive: [
+      {
+        breakpoint: 770, // For screens <= 770px
+        settings: {
+          slidesToShow: 1, // Show only 1 slide
+          slidesToScroll: 1, // Scroll 1 slide
+        },
+      },
+    ],
   };
+  
 
   // AOS Initialization
   useEffect(() => {
@@ -135,23 +145,22 @@ export default function CustomizeSection() {
     <>
       <div className="text-center mt-48">
         <h2 className="text-4xl font-bold text-blue-600 tracking-wide">
-          Frequently Asked Questions
+          Customization
         </h2>
         <p
           className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto leading-relaxed transition-opacity duration-700"
           data-aos="fade-up"
         >
-          Your questions about our online tailoring services, answered
-          with precision and care.
+          Your customization about our online tailoring services.
         </p>
       </div>
 
-      <div className="w-[90%] abcde mx-auto py-12">
+      <div className="w-[90%] abcde overflow-hidden mx-auto max-[770px]:py-0 py-12">
         <Slider className="" {...settings}>
           {SlidesData.map((slide, index) => (
             <div key={slide.id} className="px-4">
               <div
-                className={`border-red-500 rounded-lg text-center overflow-hidden transform transition-all duration-500 ${
+                className={`rounded-lg text-center overflow-hidden transform transition-all duration-500 ${
                   activeSlide === index
                     ? "scale-105"
                     : "scale-90 opacity-70"

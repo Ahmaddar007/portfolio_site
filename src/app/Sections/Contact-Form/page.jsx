@@ -19,7 +19,7 @@ const ContactForm = () => {
   }, []);
 
   return (
-    <div className="grid grid-cols-2 gap-8 px-[5%] pt-44 pb-72 bg-slate-50">
+    <div className="grid grid-cols-2 max-[770px]:grid-cols-1 max-md:gap-48 gap-8 px-[5%] max-[770px]:pt-2 max-[770px]:pb-20 pt-44 pb-72 bg-slate-50">
       {/* Left Section */}
       <div
         className="flex flex-col gap-6"
@@ -63,9 +63,9 @@ const ContactForm = () => {
       </div>
 
       {/* Right Section */}
-      <div className="relative px-[18%]" data-aos="fade-left" data-aos-delay="300">
+      <div className="relative max-[770px]:px-0 px-[18%]" data-aos="fade-left" data-aos-delay="300">
         <Image
-          className="animate__animated animate__fadeInUp absolute -top-28 right-20 z-0 w-3/4"
+          className="animate__animated animate__fadeInUp absolute -top-28 max-[770px]:right-0 right-20 z-0 w-3/4"
           src={CircleImage}
           alt="Decorative Circle"
           data-aos="zoom-in"

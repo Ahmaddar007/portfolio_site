@@ -13,7 +13,7 @@ const Header = () => {
 
       {/* Placeholder for Menu */}
       <div className="flex space-x-6 text-white font-semibold">
-        <p className="kalam_font text-3xl">Doraemon Collection</p>
+        <p className="kalam_font text-2xl">Doraemon Collection</p>
       </div>
 
       {/* Drawer Menu */}

@@ -38,7 +38,7 @@ export default function Faqs() {
     ];
 
     return (
-        <div id="faq-section" className="px-[10%] w-full py-20 bg-slate-50">
+        <div id="faq-section" className="px-[10%] max-[770px]:px-[5%] w-full py-20 bg-slate-50">
             {/* FAQ Title and Description */}
             <div className="text-center mb-16">
                 <h2

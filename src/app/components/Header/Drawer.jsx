@@ -27,7 +27,7 @@ export default function SideDrawer() {
           <Menu />
         </Button>
       </div>
-      <Drawer isOpen={isOpen} placement="right" onOpenChange={setIsOpen}>
+      <Drawer className="max-[770px]:w-[90%]" isOpen={isOpen} placement="right" onOpenChange={setIsOpen}>
         <DrawerContent>
           <>
             <DrawerHeader className="flex flex-col gap-1">Drawer Title</DrawerHeader>

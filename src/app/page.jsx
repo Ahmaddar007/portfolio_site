@@ -17,10 +17,10 @@ export default function Home() {
    <Hero />
    <Customize_Section />
    <ServiceCards />
-   {/* <Portfolio /> */}
+   {/* <Portfolio />   //// */}
    <Faqs />
    <ContactForm />
-   <NewsLetter />
+   {/* <NewsLetter /> */}
    </>
   );
 }

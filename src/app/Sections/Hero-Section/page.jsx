@@ -17,11 +17,11 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="grid grid-cols-2 gap-10 px-[5%] py-20 bg-white">
+    <div className="grid grid-cols-2 max-[770px]:grid-cols-1 gap-10 px-[5%] max-[770px]:py-0 py-20 bg-white">
       {/* Left Content */}
       <div className="flex relative flex-col justify-center space-y-6">
         <h2
-          className="text-blue-600 text-8xl leading-tight !font-extrabold"
+          className="text-blue-600 max-[770px]:text-6xl text-8xl leading-tight !font-extrabold"
           data-aos="fade-right"
         >
           Daryaft
@@ -46,7 +46,7 @@ const Hero = () => {
 
       {/* Right Content */}
       <div
-        className="flex relative justify-center items-center"
+        className="max-[770px]:hidden flex relative justify-center items-center"
         data-aos="fade-left"
       >
         {/* Overlay Images */}
