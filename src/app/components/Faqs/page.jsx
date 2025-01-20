@@ -2,10 +2,19 @@
 
 import React, { useEffect, useState } from "react";
 import { Accordion, AccordionItem } from "@nextui-org/react";
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import AOS styles
 
 export default function Faqs() {
-    const [isIntersecting, setIsIntersecting] = useState(false); // State to track visibility
     const [selectedKeys, setSelectedKeys] = useState(new Set(["1"])); // Accordion state
+
+    useEffect(() => {
+        AOS.init({
+            duration: 1000, // Animation duration in milliseconds
+            easing: "ease-out", // Easing function for animations
+            once: true, // Trigger animations only the first time the section enters
+        });
+    }, []);
 
     const faqData = [
         {
@@ -28,40 +37,20 @@ export default function Faqs() {
         },
     ];
 
-    useEffect(() => {
-        const target = document.getElementById("faq-section"); // Access target element by ID
-        const observer = new IntersectionObserver(
-            (entries) => {
-                const entry = entries[0];
-                if (entry.isIntersecting) {
-                    setIsIntersecting(true); // Mark the element as visible
-                    observer.disconnect(); // Stop observing once visible
-                }
-            },
-            { threshold: 0.5 } // Adjust visibility threshold
-        );
-
-        if (target) observer.observe(target);
-
-        return () => {
-            if (target) observer.disconnect();
-        };
-    }, []);
-
     return (
-        <div
-            id="faq-section"
-            className="px-[10%] w-full py-20 bg-slate-50"
-        >
+        <div id="faq-section" className="px-[10%] w-full py-20 bg-slate-50">
             {/* FAQ Title and Description */}
             <div className="text-center mb-16">
-                <h2 className="text-4xl font-bold text-blue-600 tracking-wide">
+                <h2
+                    className="text-4xl font-bold text-blue-600 tracking-wide"
+                    data-aos="fade-up"
+                >
                     Frequently Asked Questions
                 </h2>
                 <p
-                    className={`text-lg text-gray-600 mt-4 max-w-2xl mx-auto leading-relaxed transition-opacity duration-700 ${
-                        isIntersecting ? "animate-fadeInUp" : "opacity-0"
-                    }`}
+                    className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto leading-relaxed"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
                 >
                     Your questions about our online tailoring services, answered
                     with precision and care.
@@ -69,17 +58,23 @@ export default function Faqs() {
             </div>
 
             {/* Accordion Section */}
-            <div className="bg-white w-full border border-slate-100 shadow-sm rounded-lg">
+            <div
+                className="bg-white w-full border border-slate-100 shadow-sm rounded-lg"
+                data-aos="fade-up"
+                data-aos-delay="300"
+            >
                 <Accordion
                     selectedKeys={selectedKeys}
                     onSelectionChange={setSelectedKeys}
                 >
-                    {faqData.map((faq) => (
+                    {faqData.map((faq, index) => (
                         <AccordionItem
                             key={faq.id}
                             aria-label={`Accordion ${faq.id}`}
                             title={faq.question}
                             className="px-4 py-2"
+                            data-aos="fade-up"
+                            data-aos-delay={300 + index * 100} // Incremental delay for each tab
                         >
                             <p className="text-gray-600 px-6 pb-4 leading-relaxed">
                                 {faq.answer}

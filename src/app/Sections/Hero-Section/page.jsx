@@ -6,13 +6,13 @@ import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
 
 const Hero = () => {
-  // Initialize AOS with `once: false`
+  // Initialize AOS with `once: true`
   useEffect(() => {
     AOS.init({
       duration: 1000, // Animation duration in milliseconds
       easing: "ease-out", // Easing function for animations
-      once: false, // Trigger animations every time the section enters the viewport
-      mirror: true, // Re-trigger animations when scrolling back up
+      once: true, // Trigger animations only the first time the section enters
+      mirror: true, // Disable re-triggering animations when scrolling back up
     });
   }, []);
 
@@ -24,7 +24,7 @@ const Hero = () => {
           className="text-blue-600 text-8xl leading-tight !font-extrabold"
           data-aos="fade-right"
         >
-          Daryaft Collection
+          Daryaft
         </h2>
         <p
           className="text-gray-700 font-normal text-lg leading-relaxed"

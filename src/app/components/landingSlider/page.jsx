@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 // import Slider from "react-slick";
 
 export default function LandingSlider() {
@@ -57,7 +57,7 @@ export default function LandingSlider() {
 
   return (
     <div className="overflow-hidden w-full">
-      <img className="w-full h-auto" src="https://utfs.io/f/vm2okaME29jurocXadWpIL6EK5nZxkbWCUyR4YGwsvFO9qXS" />
+      <img className="w-full h-auto" src="https://r5o44rt206.ufs.sh/f/vm2okaME29juYfLDwu4kFeJUusgDWqNrHijPhE3TQXMo49KY" />
       {/* <Slider {...settings}>
         {desktopImages.map((image, index) => (
           <div key={index} className="w-full h-[90vh] flex justify-center items-center bg-gray-100">
