@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@nextui-org/react";
 import React, { useEffect } from "react";
 import AOS from "aos";

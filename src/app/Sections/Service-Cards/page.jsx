@@ -1,3 +1,5 @@
+"use client"
+
 import { Shirt } from "lucide-react";
 import React, { useEffect } from "react";
 import FancyText from "../FancyTexxt/page";
