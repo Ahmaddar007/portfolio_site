@@ -1,3 +1,5 @@
+"use client"
+
 import { useState } from "react";
 import { CheckCircle, Shirt, User, User2Icon } from "lucide-react";
 import React from "react";
