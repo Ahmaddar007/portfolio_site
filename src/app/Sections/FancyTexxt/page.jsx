@@ -132,10 +132,10 @@ const FancyText = () => {
                 data-aos="fade-up"
                 data-aos-delay="400"
               >
-                <Button className="p-5 font-bold bg-blue-600 text-white rounded-full">
+                <Button className="p-5 BUTTON">
                   Get Started
                 </Button>
-                <Button className="p-5 font-bold bg-blue-600 text-white rounded-full">
+                <Button className="p-5 BUTTON">
                   Contact Now
                 </Button>
               </div>

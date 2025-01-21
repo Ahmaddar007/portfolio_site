@@ -27,7 +27,7 @@ const ContactForm = () => {
         data-aos-delay="200"
       >
         <h1
-          className="text-3xl font-bold text-blue-600"
+          className="text-3xl font-bold text-blue-950"
           data-aos="fade-down"
           data-aos-delay="400"
         >
@@ -109,7 +109,7 @@ const ContactForm = () => {
               data-aos-delay="1100"
             />
             <Button
-              className="w-full bg-blue-500 font-semibold text-md text-white py-3 rounded hover:bg-blue-600 transition duration-200"
+              className="w-full bg-blue-950 font-semibold text-md text-white py-3 rounded hover:bg-blue-600 transition duration-200"
               data-aos="fade-up"
               data-aos-delay="1200"
             >

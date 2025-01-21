@@ -26,19 +26,19 @@ const config = {
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
       },
-      // colors: {
-      //   "primary": "#10336f",  // bg primary
-      //   "secondary": "#000f22",  // bg secondary
-      //   "neutral": "#f9fdff",   //  body bg
+       colors: {
+         "primary": "#10336f",  //  bg primary
+         "secondary": "#000f22",  //  bg secondary
+         "neutral": "#f9fdff",    //  body bg
 
-      //   // "textPrimary": "#032153", // text 1 for bg lights e.g
-      //   // "textSecondary": "#7c9dc6", // text 2 for bg darks
+          "textPrimary": "#032153",  // text 1 for bg lights e.g
+          "textSecondary": "#7c9dc6", //  text 2 for bg darks
 
-      //   "info": "#62B6CB",
-      //   "success": "#4CAF50",
-      //   "warning": "#FF9800",
-      //   "error": "#F44336",
-      // },
+         "info": "#62B6CB",
+         "success": "#4CAF50",
+         "warning": "#FF9800",
+         "error": "#F44336",
+       },
     },
   },
   plugins: [

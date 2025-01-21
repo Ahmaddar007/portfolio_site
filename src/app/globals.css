@@ -34,8 +34,10 @@
 /* css for dark box */
 
 .dark-box {
-  background: #10336f;
+  /* background: linear-gradient(135deg, #03122e, #173d85, #03112c); */
+  @apply bg-blue-950
 }
+
 
 .dark-box h1 {
   color: white;
@@ -57,7 +59,7 @@
 /* ////////////////////////// */
 
 :root{
-  --red-color: #ffff;
+  --red-color: #ffffff;
   --bg-color:#111827;
 }
 

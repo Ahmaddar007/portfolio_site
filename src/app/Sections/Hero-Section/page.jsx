@@ -32,12 +32,10 @@ const Hero = () => {
           Daryaft
         </h2>
         <p
-          className="des text-gray-700 font-normal text-lg leading-relaxed"
+          className="des text-gray-700 w-3/4 font-normal text-lg leading-relaxed"
           data-aos="fade-up"
         >
-          Explore our exclusive Doraemon Collection, featuring iconic designs
-          and timeless pieces inspired by the beloved character. Celebrate the
-          charm and nostalgia.
+          At Daryaft, we believe clothing is more than fabric—it’s an extension of your personality and creativity. Our name, <strong>“Daryaft”</strong>, means <strong>discovery </strong> , and we’re here to help you discover your unique style. Whether it’s a classic look or a custom creation, we bring your fashion ideas to life with cutting-edge technology and expert craftsmanship.
         </p>
         <div className="flex gap-3" data-aos="fade-up" data-aos-delay="300">
           <Button className="BUTTON">

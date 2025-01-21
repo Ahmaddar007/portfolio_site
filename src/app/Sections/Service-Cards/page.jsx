@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react";
-import { CheckCircle, Shirt, User, User2Icon } from "lucide-react";
+import { CheckCircle, House, Paintbrush, Palette, Shirt, User, User2Icon } from "lucide-react";
 import React from "react";
 import FancyText from "../FancyTexxt/page";
 
@@ -9,10 +9,10 @@ const ServiceCards = () => {
   const [services] = useState([
     {
       id: 1,
-      icon: <Shirt className="w-10 h-auto text-white" />,
-      title: "Clean Wash Service",
+      icon: <House className="w-10 h-auto text-white" />,
+      title: "In-House Manufacturing",
       description:
-        "Perfect for learning how the framework works, prototyping a new idea, or creating a demo to share online.",
+        "We take pride in crafting every piece in our own facilities to ensure exceptional quality and attention to detail. From stitching to finishing, every step is handled by our skilled team.",
       features: [
         "Lorem, ipsum dolor sit amet consectetur",
         "Lorem, ipsum dolor sit amet consectetur",
@@ -23,10 +23,10 @@ const ServiceCards = () => {
     },
     {
       id: 2,
-      icon: <User className="w-10 h-auto text-white" />,
-      title: "Premium Dry Cleaning",
+      icon: <Palette className="w-10 h-auto text-white" />,
+      title: "Pre-Designed Apparel",
       description:
-        "Our premium dry cleaning service ensures your clothes are handled with care and returned in pristine condition.",
+        "Browse our curated collections of ready-to-wear styles. Whether you’re looking for casual chic, formal elegance, or ethnic charm, you’ll find something that resonates with you.",
       features: [
         "Custom care for delicate fabrics",
         "Quick turnaround times",
@@ -38,9 +38,9 @@ const ServiceCards = () => {
     {
       id: 3,
       icon: <CheckCircle className="w-10 h-auto text-white" />,
-      title: "Express Laundry",
+      title: "Sustainable Fashion",
       description:
-        "Fast and efficient laundry service designed to save your time and keep your wardrobe fresh.",
+        "We’re committed to ethical and eco-friendly practices, ensuring your fashion choices are both stylish and responsible",
       features: [
         "Same-day service available",
         "Affordable pricing",

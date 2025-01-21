@@ -1,113 +1,170 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { BiSolidUpArrow } from "react-icons/bi";
-import { TiSocialTwitter,TiSocialInstagram,TiSocialFacebookCircular  } from "react-icons/ti";
+import { TiSocialTwitter, TiSocialInstagram, TiSocialFacebookCircular } from "react-icons/ti";
 import { IoMdMail } from "react-icons/io";
 import Link from "next/link";
 
 const Footer = () => {
+  const [hoveredLink, setHoveredLink] = useState(null);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration in milliseconds
+      once: true, // Ensure animations run only once
+    });
+  }, []);
+
+  const FooterLinks = [
+    { Title: "Home" },
+    { Title: "Services" },
+    { Title: "About us" },
+    { Title: "Blogs" },
+    { Title: "Contact us" },
+    { Title: "Privacy Policy" },
+  ];
+
   const SocialIcons = [
-    { icon: <TiSocialInstagram className=" icon relative z-10" />, link: "https://www.twitter.com" },
-    { icon: <TiSocialFacebookCircular className=" icon relative z-10" />, link: "https://www.twitter.com" },
-    { icon: <TiSocialTwitter className=" icon relative z-10" />, link: "https://www.twitter.com" },
-    { icon: <IoMdMail className=" icon relative z-10" />, link: "https://www.twitter.com" },
+    { icon: <TiSocialInstagram className="icon relative z-10" />, link: "https://www.instagram.com" },
+    { icon: <TiSocialFacebookCircular className="icon relative z-10" />, link: "https://www.facebook.com" },
+    { icon: <TiSocialTwitter className="icon relative z-10" />, link: "https://www.twitter.com" },
+    { icon: <IoMdMail className="icon relative z-10" />, link: "mailto:support@alishaimpex.com" },
   ];
 
   return (
-    <div className="w-full relative">
-      <footer className="flex flex-col gap-6 bg-gray-900 text-white font-bold p-[5%] relative">
+    <div className="w-full relative bg-blue-950 text-gray-300">
+      <footer className="flex flex-col gap-6 p-[5%]">
         <div className="ft_cont grid grid-cols-[1.5fr,1fr,1fr,1fr] py-[3%] gap-6">
-          <div className="flex flex-col  gap-4">
+          <div
+            className="flex flex-col gap-4"
+            data-aos="fade-up"
+            data-aos-delay="0"
+          >
             <div className="logo flex gap-2 items-center">
-              <BiSolidUpArrow className="text-[2rem] text-red-500 " />
-              <h1 className="text-2xl">Alishaimpex</h1>
+              <BiSolidUpArrow className="text-[2rem] text-gray-100" />
+              <h1 className="text-2xl font-bold text-gray-100">Alishaimpex</h1>
             </div>
             <div className="sin">
               <h2 className="text-transparent text-[4rem]">since 1980.</h2>
             </div>
-            <span className="mt-8">
-              2025<span className="text-red-500 cursor-pointer">Alishaimpex.</span> All Rights
-              reserved.
+            <span className="mt-8 text-gray-500">
+              2025 <span className="text-gray-200 cursor-pointer">Alishaimpex.</span> All Rights reserved.
             </span>
           </div>
-          <div className="footer_card">
-            <div className="child ">
-              <span className="text-[1.5rem]">Faisalabad</span>
-              <p className="font-light text-gray-200 text-base">
-                523 Sylvan Ave, 5th Floor <br /> Mountain View, CA 94041USA
+
+          <div
+            className="footer_card"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div className="child">
+              <span className="text-[1.5rem] font-semibold">Faisalabad</span>
+              <p className="font-light text-gray-400 text-base leading-6">
+                523 Sylvan Ave, 5th Floor <br /> Mountain View, CA 94041 USA
               </p>
             </div>
-            <div className="child ">
-              <span className="text-[1.5rem]">Socail links</span>
-              <div className="social_links flex">
-                
-                  {SocialIcons.map((value, index) => {
-                    return (
-                      <a
-                        className="s_link border border-red-500 p-2 text-[1.5rem]  relative overflow-hidden"
-                        key={index}
-                        href={value.link}
-                      >
-                        {value.icon}
-                        <span className="footer_animation"></span>
-                      </a>
-                    );
-                  })}
-                
-
-                {/* <Link href={"https://www.facebook.com"} className='s_link relative p-2 border-red-500 border '><TiSocialFacebookCircular className='icon text-[1.5rem]'/><span className="footer_animation"></span></Link>
-                <Link href={"https://www.facebook.com"} className='s_link relative p-3 border-red-500 border '><SlSocialInstagram className='icon text-[1rem] '/><span className="footer_animation"></span></Link>
-                <Link href={"https://www.facebook.com"} className='s_link relative p-2 border-red-500 border '><TiSocialTwitter className='icon text-[1.5rem] '/><span className="footer_animation"></span></Link>
-                <Link href={"https://www.facebook.com"} className='s_link relative p-3 border-red-500 border '><IoMdMail className='icon text-[1rem]' /><span className="footer_animation"></span></Link> */}
+            <div
+              className="child"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <span className="text-[1.5rem] font-semibold">Social Links</span>
+              <div className="social_links flex gap-2 mt-2">
+                {SocialIcons.map((value, index) => (
+                  <a
+                    key={index}
+                    href={value.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="s_link border border-white p-2 text-[1.5rem] relative overflow-hidden hover:bg-transparent transition-all"
+                    data-aos="fade-up"
+                    data-aos-delay={`${600 + index * 200}`}
+                  >
+                    {value.icon}
+                    <span className="footer_animation"></span>
+                  </a>
+                ))}
               </div>
             </div>
           </div>
-          <div className="footer_card">
-            <div className="child ">
-              <span className="text-[1.5rem]">Faisalabad</span>
-              <ul className="list none px-2">
-                <li className="text-red-500 font-light text-lg hover:text-gray-200 cursor-pointer transition-all">
+
+          <div
+            className="footer_card"
+            data-aos="fade-up"
+            data-aos-delay="800"
+          >
+            <div className="child">
+              <span className="text-[1.5rem] font-semibold">Contact</span>
+              <ul className="list-none px-2 mt-2">
+                <li
+                  className="font-light text-lg hover:text-gray-200 cursor-pointer transition-all"
+                  data-aos="fade-up"
+                  data-aos-delay="1000"
+                >
                   +1934719 8948
                 </li>
-                <li className="text-red-500 font-light text-lg hover:text-gray-200 cursor-pointer transition-all">
+                <li
+                  className="font-light text-lg hover:text-gray-200 cursor-pointer transition-all"
+                  data-aos="fade-up"
+                  data-aos-delay="1200"
+                >
                   +1934719 8948
                 </li>
               </ul>
             </div>
-            <div className="child">
-              <span className="text-[1.5rem]">Email</span>
-              <Link href={"/"} className="font-light">
-                <span className="text-red-500">support@alishaimpex.com</span>
+            <div
+              className="child"
+              data-aos="fade-up"
+              data-aos-delay="1400"
+            >
+              <span className="text-[1.5rem] font-semibold">Email</span>
+              <Link href="/">
+                <span className="font-light text-gray-400 hover:text-gray-200">support@alishaimpex.com</span>
               </Link>
             </div>
           </div>
-          <div className="child">
-            <span className="text-[1.5rem]">Main Menu</span>
-            <div className="nav_links flex flex-col font-light gap-1">
-              <Link className="hover:text-red-500 hover:pl-4 transition-all duration-200" href={"/"}>
-                Home
-              </Link>
-              <Link className="hover:text-red-500 hover:pl-4 transition-all duration-200" href={"/Services"}>
-                Services
-              </Link>
-              <Link className="hover:text-red-500 hover:pl-4 transition-all duration-200" href={"/About"}>
-                About us
-              </Link>
-              <Link className="hover:text-red-500 hover:pl-4 transition-all duration-200" href={"/Blogs"}>
-                Blogs
-              </Link>
-              <Link className="hover:text-red-500 hover:pl-4 transition-all duration-200" href={"/Contact"}>
-                Contact us
-              </Link>
-              <Link className="hover:text-red-500 hover:pl-4 transition-all duration-200" href={"/Privacypolicy"}>
-                Privacy Policy
-              </Link>
+
+          <div
+            className="child"
+            data-aos="fade-up"
+            data-aos-delay="1600"
+          >
+            <span className="text-[1.5rem] font-semibold">Main Menu</span>
+            <div className="nav_links flex flex-col font-light gap-1 mt-2">
+              {FooterLinks.map((menu, index) => (
+                <Link
+                  key={index}
+                  href={`/${menu.Title.replace(/\\s+/g, "").toLowerCase()}`}
+                  className={`transition-all duration-200 pl-2 border-l-2 border-transparent ${
+                    hoveredLink === index ? "text-gray-100 border-gray-500" : "hover:text-gray-100 hover:border-gray-500"
+                  }`}
+                  onMouseEnter={() => setHoveredLink(index)}
+                  onMouseLeave={() => setHoveredLink(null)}
+                  data-aos="fade-up"
+                  data-aos-delay={`${1800 + index * 200}`}
+                >
+                  {menu.Title}
+                </Link>
+              ))}
             </div>
           </div>
         </div>
-        <hr className="w-full" />
-        <span className="self-center">
-          2025 <span className="text-red-500 cursor-pointer">Alishaimpex.</span> All Rights
-          reserved.{" "}
+
+        <hr
+          className="w-full border-gray-700"
+          data-aos="fade-up"
+          data-aos-delay="2200"
+        />
+
+        <span
+          className="self-center text-gray-500 text-sm"
+          data-aos="fade-up"
+          data-aos-delay="2400"
+        >
+          Copyright @ 2025 <span className="text-gray-200 cursor-pointer">Alishaimpex.</span> All Rights reserved.
         </span>
       </footer>
     </div>
