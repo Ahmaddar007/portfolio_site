@@ -33,13 +33,13 @@ const Features = () => {
   return (
     <div
       id="features-section"
-      className="-mt-24 w-full max-[770px]:px-[5%] px-[10%] py-12"
+      className="z-10 bg-white w-full max-[770px]:px-[5%] px-[10%]"
     >
-      <div className="w-full grid grid-cols-2 max-[770px]:flex bg-blue-500 rounded-lg shadow-xl">
+      <div className="-mt-16 dark-box w-full grid grid-cols-2 max-[770px]:flex rounded-lg shadow-xl">
 
         {/* first */}
         <div className="w-full py-3">
-          <div className="flex gap-8 py-5 border-r max-[770px]:border-r-3 border-white justify-center items-center">
+          <div className="flex gap-8 py-5 border-r max-[770px]:border-r-3 border-base-200 justify-center items-center">
             <AvatarGroup isBordered max={3}>
               <Avatar
                 size="lg"
@@ -54,26 +54,26 @@ const Features = () => {
                 src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
               />
             </AvatarGroup>
-            <h3 className="text-white text-3xl font-normal">
+            <h2 className="text-textPrimary text-3xl font-normal">
               {inView && <CountUp end={4.8} duration={2.5} decimals={1} />}+
-            </h3>
+            </h2>
           </div>
         </div>
 
         {/* second */}
         <div className="max-[770px]:hidden grid grid-cols-2 py-3 justify-center items-center">
-          <div className="flex py-5 border-r border-white items-center justify-center">
-            <TbStarsFilled className="w-28 text-white h-16" />
-            <h3 className="text-white text-3xl font-normal">
+          <div className="flex py-5 border-r border-base-200 items-center justify-center">
+            <TbStarsFilled className="w-28 h-16" />
+            <h2 className="text-textPrimary text-3xl font-normal">
               {inView && <CountUp end={100} duration={2.5} />}+
-            </h3>
+            </h2>
           </div>
 
           <div className="flex py-5 items-center justify-center">
-            <FaStar className="w-20 text-white h-8" />
-            <h3 className="text-white text-3xl font-normal">
+            <FaStar className="w-20 h-8" />
+            <h2 className="text-textPrimary text-3xl font-normal">
               {inView && <CountUp end={10} duration={2.5} />}+
-            </h3>
+            </h2>
           </div>
         </div>
         

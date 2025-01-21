@@ -53,7 +53,6 @@ const ServiceCards = () => {
 
   return (
     <>
-
       <FancyText />
 
       <div className="mb-32 w-full">
@@ -67,11 +66,11 @@ const ServiceCards = () => {
               className="group border border-gray-300 shadow-md hover:shadow-lg relative cursor-pointer overflow-hidden bg-white px-6 pt-10 pb-8 ring-gray-900/5 transition-all duration-500 hover:-translate-y-5"
             >
 
-              <span className="absolute top-10 z-0 h-20 w-20 rounded-full bg-sky-500 transition-all duration-500 group-hover:scale-[14]"></span>
+              <span className="absolute top-10 z-0 h-20 w-20 rounded-full bg-[#10336f] transition-all duration-500 group-hover:scale-[18]"></span>
 
               <div className="relative z-10">
 
-                <div className="grid h-20 w-20 place-items-center rounded-full bg-sky-500 transition-all duration-500 group-hover:bg-sky-400">
+                <div className="grid h-20 w-20 place-items-center rounded-full bg-[#10336f] transition-all duration-500 group-hover:bg-[#2d497a]">
                   {service.icon}
                 </div>
 
@@ -83,7 +82,7 @@ const ServiceCards = () => {
                   <p>
                     <a
                       href="#"
-                      className="text-sky-500 transition-all duration-300 group-hover:text-white"
+                      className="text-[#10336f] transition-all duration-300 group-hover:text-white"
                     >
                       {service.title}
                     </a>

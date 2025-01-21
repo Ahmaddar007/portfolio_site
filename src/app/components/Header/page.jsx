@@ -4,20 +4,22 @@ import { Button } from "@nextui-org/react";
 
 const Header = () => {
   return (
-    <div className="flex justify-between items-center w-[90%] py-2 rounded-full z-50 shadow-md fixed top-2 bg-blue-500">
+    <div className="dark-box flex justify-between items-center w-[90%] py-2 rounded-full z-50 shadow-md fixed top-2">
 
       {/* Logo Section */}
       <div className="flex items-center">
-        <Button className="text-white bg-transparent ml-4 focus:border-0 shadow-none text-2xl tracking-wide">Logo</Button>
+        <Button className="bg-transparent text-white outline-none rounded-full focus:border-0">
+          Logo
+        </Button>
       </div>
 
       {/* Placeholder for Menu */}
-      <div className="flex space-x-6 text-white font-semibold">
-        <p className="kalam_font text-2xl">Doraemon Collection</p>
+      <div className="flex">
+        <h1 className="kalam_font text-3xl text-white">Daryaft</h1>
       </div>
 
       {/* Drawer Menu */}
-      <div>
+      <div> 
         <SideDrawer />
       </div>
 

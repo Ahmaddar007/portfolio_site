@@ -27,11 +27,18 @@ export default function SideDrawer() {
           <Menu />
         </Button>
       </div>
-      <Drawer className="max-[770px]:w-[90%]" isOpen={isOpen} placement="right" onOpenChange={setIsOpen}>
-        <DrawerContent>
+      <Drawer
+        className="max-[770px]:w-[90%]"
+        isOpen={isOpen}
+        placement="right"
+        onOpenChange={setIsOpen}
+      >
+        <DrawerContent className="bg-neutral text-textSecondary">
           <>
-            <DrawerHeader className="flex flex-col gap-1">Drawer Title</DrawerHeader>
-            <DrawerBody>
+            <DrawerHeader className="flex flex-col gap-1 text-textPrimary font-bold">
+              Drawer Title
+            </DrawerHeader>
+            <DrawerBody className="text-textPrimary">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pulvinar risus non
                 risus hendrerit venenatis. Pellentesque sit amet hendrerit risus, sed porttitor

@@ -2,6 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* NA global css */
+
+/* css for buttons */
+
+.BUTTON {
+  @apply bg-[#052355] font-semibold text-slate-50 rounded-full hover:bg-[#0e1a30] outline-none 
+}
+
+/* css for link */
+
+.links {
+  @apply text-[#444746] hover:text-[#2962ff]
+}
+
+/* css for text */
+
+.headings {
+  @apply text-5xl max-md:text-3xl text-[#000f22] font-bold
+}
+
+.sec_heading {
+  @apply text-3xl max-md:text-lg text-[#000f22]
+}
+
+.des {
+  @apply text-[#4b5563]
+}
+
+/* css for dark box */
+
+.dark-box {
+  background: #10336f;
+}
+
+.dark-box h1 {
+  color: white;
+}
+
+.dark-box h2 {
+  color: white;
+}
+
+.dark-box div {
+  @apply border-slate-200
+}
+
+.dark-box svg {
+  color: white;
+}
+
+
+/* ////////////////////////// */
+
+:root{
+  --red-color: #ffff;
+  --bg-color:#111827;
+}
+
+
+
 .kalam_font {
     font-family: "Great Vibes", serif;
     font-weight: 400;
@@ -20,3 +81,49 @@
 .abcde .slick-track {
   padding: 50px 0;
 } 
+
+/* MUJEEB CSS */
+
+/* SINCE Text */
+
+.sin{
+  -webkit-text-stroke: 1px var(--red-color); 
+}
+
+
+/* Footer Animation */
+
+
+.footer_animation{
+  height: 100%;
+  width: 100%;
+  background-color: var(--red-color);
+  position: absolute;
+  top: 40px;
+  left: 0;
+  transition: all .5s;    
+}
+.s_link{
+  overflow: hidden;
+}
+
+.s_link:hover .footer_animation {
+  top: 0;
+  z-index: 1;
+}
+.s_link:hover .icon{
+  @apply text-gray-900
+}
+
+.footer_card{
+  @apply
+   flex
+    flex-col 
+    gap-6
+}
+.child{
+  @apply
+   flex
+    flex-col 
+    gap-3
+}

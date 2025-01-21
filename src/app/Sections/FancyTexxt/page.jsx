@@ -19,22 +19,24 @@ const FancyText = () => {
     <div className="mt-20">
       <div className="relative py-16">
         {/* Background Gradients */}
-        <div
+        
+        {/* <div
           aria-hidden="true"
           className="absolute inset-0 h-max w-full m-auto grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20"
         >
           <div
-            className="blur-[106px] h-56 bg-gradient-to-br from-blue-600 to-blue-500 dark:from-blue-700"
+            className="blur-[106px] h-56 bg-gradient-to-br from-white to-slate-300"
             data-aos="fade-right"
           ></div>
           <div
-            className="blur-[106px] h-32 bg-gradient-to-r from-blue-400 to-blue-500 dark:to-indigo-600"
+            className="blur-[106px] h-32 bg-gradient-to-r from-gray-300 to-gray-50"
             data-aos="fade-left"
             data-aos-delay="200"
           ></div>
-        </div>
+        </div> */}
 
         <div className="max-w-7xl mx-auto px-6 md:px-12 xl:px-6">
+
           <div className="relative">
             {/* Animated Profile Images */}
             <div
@@ -92,7 +94,7 @@ const FancyText = () => {
             </div>
 
             {/* Animated Text Content */}
-            <div className="w-full">
+            <div className="text-center w-full">
               <h1
                 className="text-center text-2xl font-bold text-gray-800"
                 data-aos="fade-up"
@@ -101,7 +103,7 @@ const FancyText = () => {
               </h1>
 
               <p
-                className="text-4xl font-bold text-gray-800"
+                className="text-center text-4xl font-bold text-gray-800"
                 data-aos="fade-up"
                 data-aos-delay="200"
               >
@@ -138,6 +140,7 @@ const FancyText = () => {
                 </Button>
               </div>
             </div>
+
           </div>
         </div>
       </div>

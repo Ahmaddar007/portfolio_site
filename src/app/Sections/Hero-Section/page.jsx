@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import { Button } from "@nextui-org/react";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
+import Features from "../Feature-Section/page";
 
 const Hero = () => {
   // Initialize AOS with `once: true`
@@ -17,17 +18,21 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="grid grid-cols-2 max-[770px]:grid-cols-1 gap-10 px-[5%] max-[770px]:py-0 py-20 bg-white">
+    <>
+
+    <Features />
+
+    <div className="grid grid-cols-2 max-[770px]:grid-cols-1 gap-10 px-[5%] max-[770px]:py-0 py-48 bg-white">
       {/* Left Content */}
       <div className="flex relative flex-col justify-center space-y-6">
         <h2
-          className="text-blue-600 max-[770px]:text-6xl text-8xl leading-tight !font-extrabold"
+          className="text-[#052355] max-[770px]:text-6xl text-8xl leading-tight !font-extrabold"
           data-aos="fade-right"
         >
           Daryaft
         </h2>
         <p
-          className="text-gray-700 font-normal text-lg leading-relaxed"
+          className="des text-gray-700 font-normal text-lg leading-relaxed"
           data-aos="fade-up"
         >
           Explore our exclusive Doraemon Collection, featuring iconic designs
@@ -35,10 +40,10 @@ const Hero = () => {
           charm and nostalgia.
         </p>
         <div className="flex gap-3" data-aos="fade-up" data-aos-delay="300">
-          <Button className="bg-blue-600 p-6 rounded-full text-white font-semibold text-md">
+          <Button className="BUTTON">
             Lorem Ipsum
           </Button>
-          <Button className="bg-blue-500 p-6 rounded-full text-white font-semibold text-md">
+          <Button className="BUTTON">
             Lorem Ipsum
           </Button>
         </div>
@@ -91,7 +96,10 @@ const Hero = () => {
           alt="Main Hero"
         />
       </div>
+
     </div>
+    </>
+
   );
 };
 

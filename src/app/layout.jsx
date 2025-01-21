@@ -1,7 +1,7 @@
 import "./globals.css";
-import Footer from "./components/Footer/page";
 import Header from "./components/Header/page";
 import { NextUIProvider } from "@nextui-org/react";
+import Footer from "./components/Footer/page";
 
 export default function RootLayout({ children }) {
   return (
@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
         />
         
       </head>
-      <body>
+      <body className="bg-blue-50">
         <NextUIProvider>
           <div className="flex flex-col items-center">
             <Header />

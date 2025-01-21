@@ -13,10 +13,9 @@ export default function Home() {
   return (
    <>
    <LandingSlider />
-   <Features />
    <Hero />
-   <Customize_Section />
    <ServiceCards />
+   <Customize_Section />
    {/* <Portfolio />   //// */}
    <Faqs />
    <ContactForm />

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "aos/dist/aos.css"; // Import AOS styles
@@ -31,7 +31,7 @@ export default function CustomizeSection() {
       },
     ],
   };
-  
+
 
   // AOS Initialization
   useEffect(() => {
@@ -42,113 +42,22 @@ export default function CustomizeSection() {
     });
   }, []);
 
-  const SlidesData = [
-    {
-      id: 1,
-      content: (
-        <div>
-          <img
-            src="https://r5o44rt206.ufs.sh/f/vm2okaME29juSnXVegBztIEfeY2M9bRCmVxvHLdTJornWkXP"
-            alt="image"
-          />
-          <div>
-            <h1 className="my-3 text-2xl text-center text-gray-800">
-              Lorem Ipsum dolor
-            </h1>
-            <Button className="bg-blue-600 text-white font-semibold w-full rounded-none">
-              Customize Now
-            </Button>
-          </div>
-        </div>
-      ),
-    },
-    {
-      id: 2,
-      content: (
-        <div>
-          <img
-            src="https://r5o44rt206.ufs.sh/f/vm2okaME29juU7dnplty7OlbfMWStvDXkp9804RBaJ3KPLTx"
-            alt="image"
-          />
-          <div>
-            <h1 className="my-3 text-2xl text-center text-gray-800">
-              Lorem Ipsum dolor
-            </h1>
-            <Button className="bg-blue-600 text-white font-semibold w-full rounded-none">
-              Customize Now
-            </Button>
-          </div>
-        </div>
-      ),
-    },
-    {
-      id: 3,
-      content: (
-        <div>
-          <img
-            src="https://r5o44rt206.ufs.sh/f/vm2okaME29juSnXVegBztIEfeY2M9bRCmVxvHLdTJornWkXP"
-            alt="image"
-          />
-          <div>
-            <h1 className="my-3 text-2xl text-center text-gray-800">
-              Lorem Ipsum dolor
-            </h1>
-            <Button className="bg-blue-600 text-white font-semibold w-full rounded-none">
-              Customize Now
-            </Button>
-          </div>
-        </div>
-      ),
-    },
-    {
-      id: 4,
-      content: (
-        <div>
-          <img
-            src="https://r5o44rt206.ufs.sh/f/vm2okaME29juU7dnplty7OlbfMWStvDXkp9804RBaJ3KPLTx"
-            alt="image"
-          />
-          <div>
-            <h1 className="my-3 text-2xl text-center text-gray-800">
-              Lorem Ipsum dolor
-            </h1>
-            <Button className="bg-blue-600 text-white font-semibold w-full rounded-none">
-              Customize Now
-            </Button>
-          </div>
-        </div>
-      ),
-    },
-    {
-      id: 5,
-      content: (
-        <div>
-          <img
-            src="https://r5o44rt206.ufs.sh/f/vm2okaME29juU7dnplty7OlbfMWStvDXkp9804RBaJ3KPLTx"
-            alt="image"
-          />
-          <div>
-            <h1 className="my-3 text-2xl text-center text-gray-800">
-              Lorem Ipsum dolor
-            </h1>
-            <Button className="bg-blue-600 text-white font-semibold w-full rounded-none">
-              Customize Now
-            </Button>
-          </div>
-        </div>
-      ),
-    },
-    // Add other slides here...
-  ];
+  const [ SlidesData , setSlidesData ] = useState([
+    { image : "https://r5o44rt206.ufs.sh/f/vm2okaME29juSnXVegBztIEfeY2M9bRCmVxvHLdTJornWkXP" , heading : "Lorem Ipsum Dolor" , btn : "Customize Now" },
+    { image : "https://r5o44rt206.ufs.sh/f/vm2okaME29juU7dnplty7OlbfMWStvDXkp9804RBaJ3KPLTx" , heading : "Lorem Ipsum Dolor" , btn : "Customize Now" },
+    { image : "https://r5o44rt206.ufs.sh/f/vm2okaME29juSnXVegBztIEfeY2M9bRCmVxvHLdTJornWkXP" , heading : "Lorem Ipsum Dolor" , btn : "Customize Now" },
+    { image : "https://r5o44rt206.ufs.sh/f/vm2okaME29juU7dnplty7OlbfMWStvDXkp9804RBaJ3KPLTx" , heading : "Lorem Ipsum Dolor" , btn : "Customize Now" },
+    { image : "https://r5o44rt206.ufs.sh/f/vm2okaME29juSnXVegBztIEfeY2M9bRCmVxvHLdTJornWkXP" , heading : "Lorem Ipsum Dolor" , btn : "Customize Now" }
+  ]);
 
   return (
     <>
       <div className="text-center mt-48">
-        <h2 className="text-4xl font-bold text-blue-600 tracking-wide">
+        <h2 className="headings">
           Customization
         </h2>
         <p
-          className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto leading-relaxed transition-opacity duration-700"
+          className="mt-4  mx-auto leading-relaxed transition-opacity duration-700"
           data-aos="fade-up"
         >
           Your customization about our online tailoring services.
@@ -160,13 +69,25 @@ export default function CustomizeSection() {
           {SlidesData.map((slide, index) => (
             <div key={slide.id} className="px-4">
               <div
-                className={`rounded-lg text-center overflow-hidden transform transition-all duration-500 ${
-                  activeSlide === index
+                className={`rounded-lg text-center overflow-hidden transform transition-all duration-500 ${activeSlide === index
                     ? "scale-105"
                     : "scale-90 opacity-70"
-                }`}
+                  }`}
               >
-                {slide.content}
+                <div>
+                  <img
+                    src={slide.image}
+                    alt="image"
+                  />
+                  <div>
+                    <h1 className="my-3 text-center">
+                      {slide.heading}
+                    </h1>
+                    <Button className="w-3/4">
+                      {slide.btn}
+                    </Button>
+                  </div>
+                </div>
               </div>
             </div>
           ))}
