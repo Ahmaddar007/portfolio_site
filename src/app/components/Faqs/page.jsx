@@ -38,23 +38,22 @@ export default function Faqs() {
     ];
 
     return (
-        <div id="faq-section" className="px-[10%] max-[770px]:px-[5%] w-full py-20 bg-slate-50">
+        <div id="faq-section" className="px-[10%] w-full py-20">
             {/* FAQ Title and Description */}
             <div className="text-center mb-16">
                 <h2
-                    className="text-4xl font-bold text-blue-600 tracking-wide"
+                    className="sub-heading--primary !text-gray-900"
                     data-aos="fade-up"
                 >
                     Frequently Asked Questions
                 </h2>
-                <p
-                    className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto leading-relaxed"
+                <h2
+                    className="heading--primary"
                     data-aos="fade-up"
                     data-aos-delay="200"
                 >
-                    Your questions about our online tailoring services, answered
-                    with precision and care.
-                </p>
+                    We answer you with precision and care.
+                </h2>
             </div>
 
             {/* Accordion Section */}

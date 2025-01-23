@@ -15,8 +15,6 @@ const ServiceCards = () => {
         "We take pride in crafting every piece in our own facilities to ensure exceptional quality and attention to detail. From stitching to finishing, every step is handled by our skilled team.",
       features: [
         "Lorem, ipsum dolor sit amet consectetur",
-        "Lorem, ipsum dolor sit amet consectetur",
-        "Lorem, ipsum dolor sit amet consectetur",
         "Affordable pricing",
         "High-quality detergents used",
       ],
@@ -29,9 +27,7 @@ const ServiceCards = () => {
         "Browse our curated collections of ready-to-wear styles. Whether you’re looking for casual chic, formal elegance, or ethnic charm, you’ll find something that resonates with you.",
       features: [
         "Custom care for delicate fabrics",
-        "Quick turnaround times",
         "Environmentally friendly cleaning solutions",
-        "Affordable pricing",
         "High-quality detergents used",
       ],
     },
@@ -45,17 +41,15 @@ const ServiceCards = () => {
         "Same-day service available",
         "Affordable pricing",
         "High-quality detergents used",
-        "Affordable pricing",
-        "High-quality detergents used",
       ],
     },
   ]);
 
   return (
-    <>
+    <div className="bg-[#a16c3d] bg-center bg-no-repeat bg-cover bgImage">
       <FancyText />
 
-      <div className="bg-[#a16c3d] mb-32 w-full">
+      <div className=" mb-32 w-full">
         <div className="w-full grid grid-cols-3 max-[770px]:grid-cols-1 flex-nowrap max-[770px]:px-[5%] px-[10%] gap-4 justify-center py-10">
           {services.map((service) => (
             <div
@@ -101,7 +95,8 @@ const ServiceCards = () => {
           ))}
         </div>
       </div>
-    </>
+
+    </div>
   );
 };
 

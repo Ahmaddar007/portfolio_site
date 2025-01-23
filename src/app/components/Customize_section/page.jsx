@@ -8,6 +8,10 @@ import "aos/dist/aos.css"; // Import AOS styles
 import AOS from "aos";
 import Slider from "react-slick";
 import { Button } from "@nextui-org/react";
+import Image from "next/image";
+import V1 from "@/../../public/anime/1.png"
+import V2 from "@/../../public/anime/2.png"
+import V3 from "@/../../public/anime/3.png"
 
 export default function CustomizeSection() {
   const [activeSlide, setActiveSlide] = React.useState(0);
@@ -42,48 +46,49 @@ export default function CustomizeSection() {
     });
   }, []);
 
-  const [ SlidesData , setSlidesData ] = useState([
-    { image : "https://r5o44rt206.ufs.sh/f/vm2okaME29juSnXVegBztIEfeY2M9bRCmVxvHLdTJornWkXP" , heading : "Lorem Ipsum Dolor" , btn : "Customize Now" },
-    { image : "https://r5o44rt206.ufs.sh/f/vm2okaME29juU7dnplty7OlbfMWStvDXkp9804RBaJ3KPLTx" , heading : "Lorem Ipsum Dolor" , btn : "Customize Now" },
-    { image : "https://r5o44rt206.ufs.sh/f/vm2okaME29juSnXVegBztIEfeY2M9bRCmVxvHLdTJornWkXP" , heading : "Lorem Ipsum Dolor" , btn : "Customize Now" },
-    { image : "https://r5o44rt206.ufs.sh/f/vm2okaME29juU7dnplty7OlbfMWStvDXkp9804RBaJ3KPLTx" , heading : "Lorem Ipsum Dolor" , btn : "Customize Now" },
-    { image : "https://r5o44rt206.ufs.sh/f/vm2okaME29juSnXVegBztIEfeY2M9bRCmVxvHLdTJornWkXP" , heading : "Lorem Ipsum Dolor" , btn : "Customize Now" }
+  const [SlidesData, setSlidesData] = useState([
+    { image: V1, heading: "Lorem Ipsum Dolor", btn: "Customize Now" },
+    { image: V2, heading: "Lorem Ipsum Dolor", btn: "Customize Now" },
+    { image: V3, heading: "Lorem Ipsum Dolor", btn: "Customize Now" },
+    { image: V1, heading: "Lorem Ipsum Dolor", btn: "Customize Now" },
+    { image: V2, heading: "Lorem Ipsum Dolor", btn: "Customize Now" }
   ]);
 
   return (
     <>
-      <div className="text-center mt-48">
-        <h2 className="headings">
+      <div className="mt-20 text-center">
+        <h2
+          data-aos="fade-down"
+          className="!text-gray-900 sub-heading--primary">
           Customization
         </h2>
-        <p
-          className="mt-4  mx-auto leading-relaxed transition-opacity duration-700"
-          data-aos="fade-up"
+        <h2
+          className=" heading--primary"
         >
-          Your customization about our online tailoring services.
-        </p>
+          Your customization tailoring services.
+        </h2>
       </div>
 
-      <div className="w-[90%] abcde overflow-hidden mx-auto max-[770px]:py-0 py-12">
+      <div className="w-[90%] my-20 overflow-hidden">
         <Slider className="" {...settings}>
           {SlidesData.map((slide, index) => (
-            <div key={slide.id} className="px-4">
+            <div key={slide.id} className="py-4">
               <div
                 className={`rounded-lg text-center overflow-hidden transform transition-all duration-500 ${activeSlide === index
-                    ? "scale-105"
-                    : "scale-90 opacity-70"
+                  ? "scale-105"
+                  : "scale-90 opacity-70"
                   }`}
               >
                 <div>
-                  <img
+                  <Image
                     src={slide.image}
                     alt="image"
                   />
                   <div>
-                    <h1 className="my-3 text-center">
+                    <h1 className="my-3 !text-gray-900 sub-heading--primary text-center">
                       {slide.heading}
                     </h1>
-                    <Button className="w-3/4">
+                    <Button className="BUTTON--primary w-3/4">
                       {slide.btn}
                     </Button>
                   </div>

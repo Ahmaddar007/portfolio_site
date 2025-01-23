@@ -19,7 +19,7 @@ const ContactForm = () => {
   }, []);
 
   return (
-    <div className="grid grid-cols-2 max-[770px]:grid-cols-1 max-md:gap-48 gap-8 px-[5%] max-[770px]:pt-2 max-[770px]:pb-20 pt-44 pb-72 bg-slate-50">
+    <div className="grid grid-cols-2 max-[770px]:grid-cols-1 max-md:gap-48 gap-8 px-[5%] max-[770px]:pt-2 max-[770px]:pb-20 pt-44 pb-72 bg-gradient-to-r from-[#815832] via-[#8f5a28] to-[#c77d37]">
       {/* Left Section */}
       <div
         className="flex flex-col gap-6"
@@ -27,14 +27,14 @@ const ContactForm = () => {
         data-aos-delay="200"
       >
         <h1
-          className="text-3xl font-bold text-blue-950"
+          className="heading--secondary"
           data-aos="fade-down"
           data-aos-delay="400"
         >
           Have questions? Fill out our form, and we’ll get back to you soon!
         </h1>
         <p
-          className="text-gray-600 leading-relaxed"
+          className="!text-white text--primary"
           data-aos="fade-up"
           data-aos-delay="600"
         >
@@ -55,8 +55,8 @@ const ContactForm = () => {
               data-aos="fade-left"
               data-aos-delay={700 + index * 100} // Incremental delay for each list item
             >
-              <CircleCheck className="text-green-600 rounded-full mt-1" />
-              <p className="text-gray-700">{text}</p>
+              <CircleCheck className="text-white rounded-full mt-1" />
+              <p className="text-white">{text}</p>
             </li>
           ))}
         </ul>
@@ -64,13 +64,13 @@ const ContactForm = () => {
 
       {/* Right Section */}
       <div className="relative max-[770px]:px-0 px-[18%]" data-aos="fade-left" data-aos-delay="300">
-        <Image
+        {/* <Image
           className="animate__animated animate__fadeInUp absolute -top-28 max-[770px]:right-0 right-20 z-0 w-3/4"
           src={CircleImage}
           alt="Decorative Circle"
           data-aos="zoom-in"
           data-aos-delay="500"
-        />
+        /> */}
 
         {/* Form */}
         <div
@@ -79,7 +79,7 @@ const ContactForm = () => {
           data-aos-delay="700"
         >
           <h2
-            className="text-center text-2xl mb-8 font-semibold text-gray-800"
+            className="text-center !text-gray-900 heading--primary mb-8 !text-2xl"
             data-aos="fade-down"
             data-aos-delay="800"
           >
@@ -109,7 +109,7 @@ const ContactForm = () => {
               data-aos-delay="1100"
             />
             <Button
-              className="w-full bg-blue-950 font-semibold text-md text-white py-3 rounded hover:bg-blue-600 transition duration-200"
+              className="w-full BUTTON--primary"
               data-aos="fade-up"
               data-aos-delay="1200"
             >

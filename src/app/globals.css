@@ -4,6 +4,14 @@
 
 /* /////////////////////////////////// */
 
+.bgImage {
+  background-image: url(@/../../../public/banner/sh.png);
+}
+
+.heroImage {
+  background-image: url(@/../../../public/banner/hero.png);
+}
+
 .ABCSD {
 
   color: #e9bc95;  /* primary */
@@ -16,8 +24,16 @@
 .heading--primary {
   color: #a16c3d;
   font-family: "Lora", serif;
-  font-weight: 400;
   font-style: normal;
+
+  @apply text-4xl font-semibold
+}
+
+.heading--secondary {
+  color: #ffffff;
+  font-family: "Lora", serif;
+  font-style: normal;
+  @apply text-4xl font-semibold
 }
 
 .sub-heading--primary {
@@ -25,6 +41,8 @@
   font-family: "Satisfy", serif;
   font-weight: 400;
   font-style: normal;
+
+  @apply text-2xl
 }
 
 .text--primary {

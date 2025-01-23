@@ -16,7 +16,7 @@ const FancyText = () => {
   }, []);
 
   return (
-    <div className="bg-[#a16c3d] py-16 w-full">
+    <div className="py-16 w-full">
 
       <div className="relative">
         {/* Animated Profile Images */}
