@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react";
-import { CheckCircle, House, Paintbrush, Palette, Shirt, User, User2Icon } from "lucide-react";
+import { CheckCircle, House, Palette } from "lucide-react";
 import React from "react";
 import FancyText from "../FancyTexxt/page";
 
@@ -55,26 +55,21 @@ const ServiceCards = () => {
     <>
       <FancyText />
 
-      <div className="mb-32 w-full">
-
+      <div className="bg-[#a16c3d] mb-32 w-full">
         <div className="w-full grid grid-cols-3 max-[770px]:grid-cols-1 flex-nowrap max-[770px]:px-[5%] px-[10%] gap-4 justify-center py-10">
-
           {services.map((service) => (
-
             <div
               key={service.id}
-              className="group border border-gray-300 shadow-md hover:shadow-lg relative cursor-pointer overflow-hidden bg-white px-6 pt-10 pb-8 ring-gray-900/5 transition-all duration-500 hover:-translate-y-5"
+              className="group hover:border-t-5 hover:border-[#d08b5d] shadow-[#a16c3d] shadow-lg relative cursor-pointer overflow-hidden bg-[#8a5a30] px-6 pt-10 pb-8 ring-gray-900/5 transition-all duration-500 hover:-translate-y-5"
             >
-
-              <span className="absolute top-10 z-0 h-20 w-20 rounded-full bg-[#10336f] transition-all duration-500 group-hover:scale-[18]"></span>
+              <span className="absolute top-10 z-0 h-20 w-20 rounded-full bg-[#946134] transition-all duration-500 group-hover:scale-[18]"></span>
 
               <div className="relative z-10">
-
-                <div className="grid h-20 w-20 place-items-center rounded-full bg-[#10336f] transition-all duration-500 group-hover:bg-[#2d497a]">
+                <div className="grid h-20 w-20 place-items-center rounded-full bg-[#a16c3d] transition-all duration-500 group-hover:bg-[#d08b5d]">
                   {service.icon}
                 </div>
 
-                <div className="space-y-6 pt-5 text-base leading-7 text-gray-600 transition-all duration-300 group-hover:text-white/90">
+                <div className="space-y-6 pt-5 text-base leading-7 text-gray-100 transition-all duration-300 group-hover:text-white/90">
                   <p>{service.description}</p>
                 </div>
 
@@ -82,36 +77,28 @@ const ServiceCards = () => {
                   <p>
                     <a
                       href="#"
-                      className="text-[#10336f] transition-all duration-300 group-hover:text-white"
+                      className="text-white transition-all duration-300 group-hover:text-white"
                     >
                       {service.title}
                     </a>
                   </p>
                 </div>
 
-                <div className="space-y-6 pt-5 text-base leading-7 text-gray-600 transition-all duration-300 group-hover:text-white/90">
+                <div className="space-y-6 pt-5 text-base leading-7 text-gray-100 transition-all duration-300 group-hover:text-white/90">
                   <ul>
                     {service.features.map((feature, index) => (
                       <li
                         key={index}
-                        className={`py-2 ${
-                          index < service.features.length - 1
-                            ? "border-b border-gray-200"
-                            : "border-gray-200"
-                        }`}
+                        className={`py-2 ${index < service.features.length - 1 ? "border-b border-gray-200" : "border-gray-200"}`}
                       >
                         {feature}
                       </li>
                     ))}
                   </ul>
                 </div>
-
               </div>
-              
             </div>
-
           ))}
-
         </div>
       </div>
     </>

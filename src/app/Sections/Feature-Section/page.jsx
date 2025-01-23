@@ -33,9 +33,9 @@ const Features = () => {
   return (
     <div
       id="features-section"
-      className="z-10 bg-white w-full max-[770px]:px-[5%] px-[10%]"
+      className="z-10 w-full max-[770px]:px-[5%] px-[10%]"
     >
-      <div className="-mt-16 dark-box w-full grid grid-cols-2 max-[770px]:flex rounded-lg shadow-xl">
+      <div className="bg-secondary -mt-16 w-full grid grid-cols-2 max-[770px]:flex rounded-lg shadow-xl">
 
         {/* first */}
         <div className="w-full py-3">
@@ -54,7 +54,7 @@ const Features = () => {
                 src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
               />
             </AvatarGroup>
-            <h2 className="text-textPrimary text-3xl font-normal">
+            <h2 className="text-neutral text-3xl font-normal">
               {inView && <CountUp end={4.8} duration={2.5} decimals={1} />}+
             </h2>
           </div>
@@ -63,15 +63,15 @@ const Features = () => {
         {/* second */}
         <div className="max-[770px]:hidden grid grid-cols-2 py-3 justify-center items-center">
           <div className="flex py-5 border-r border-base-200 items-center justify-center">
-            <TbStarsFilled className="w-28 h-16" />
-            <h2 className="text-textPrimary text-3xl font-normal">
+            <TbStarsFilled className="text-neutral w-28 h-16" />
+            <h2 className="text-neutral text-3xl font-normal">
               {inView && <CountUp end={100} duration={2.5} />}+
             </h2>
           </div>
 
           <div className="flex py-5 items-center justify-center">
-            <FaStar className="w-20 h-8" />
-            <h2 className="text-textPrimary text-3xl font-normal">
+            <FaStar className="text-neutral w-20 h-8" />
+            <h2 className="text-neutral text-3xl font-normal">
               {inView && <CountUp end={10} duration={2.5} />}+
             </h2>
           </div>

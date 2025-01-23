@@ -11,6 +11,8 @@
   "dependencies": {
     "@nextui-org/react": "^2.6.10",
     "@react-hook/intersection-observer": "^3.1.2",
+    "@react-three/drei": "^9.121.3",
+    "@react-three/fiber": "^8.17.12",
     "animate.css": "^4.1.1",
     "aos": "^3.0.0-beta.6",
     "embla-carousel-react": "^8.5.2",
@@ -24,7 +26,8 @@
     "react-slick": "^0.30.3",
     "sharp": "^0.33.5",
     "slick-carousel": "^1.8.1",
-    "slick-slider": "^1.8.2"
+    "slick-slider": "^1.8.2",
+    "three": "^0.172.0"
   },
   "devDependencies": {
     "daisyui": "^4.12.23",

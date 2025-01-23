@@ -2,110 +2,158 @@
 @tailwind components;
 @tailwind utilities;
 
+/* /////////////////////////////////// */
 
-/* NA global css */
+.ABCSD {
 
-/* css for buttons */
+  color: #e9bc95;  /* primary */
+  background: #a8744a; /* secondary */
 
-.BUTTON {
-  @apply bg-[#052355] font-semibold text-slate-50 rounded-full hover:bg-[#0e1a30] outline-none 
+  color: #f8f3f3;
+
 }
 
-/* css for link */
+.heading--primary {
+  color: #a16c3d;
+  font-family: "Lora", serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
-.links {
+.sub-heading--primary {
+  color: #c29166;
+  font-family: "Satisfy", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.text--primary {
+  color: #8f8174;
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.data-\[focus-visible\=true\]\:outline-focus[data-focus-visible="true"] {
+  outline-color: unset;
+}
+
+.BUTTON--primary {
+  background: #a16c3d;
+  color: white;
+  font-family: "Lora", serif;
+  font-weight: bold;
+  font-style: normal;
+  border: 1px solid #a16c3d;
+  border-radius: 0;
+  @apply hover:text-[#a16c3d] hover:bg-white focus-visible:outline-none focus:outline-none
+}
+
+.BUTTON--secondary {
+  background: transparent;
+  color: white;
+  font-family: "Lora", serif;
+  font-weight: bold;
+  font-style: normal;
+  border: 1px solid white;
+  border-radius: 0;
+  @apply hover:text-[#a16c3d] hover:bg-white focus-visible:outline-none focus:outline-none
+}
+
+.SECTION--primary {
+
+  padding: 50px 10%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 50px;
+}
+
+.SECTION--secondary {
+  background: #fcf7f1;
+  padding: 50px 10%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 50px;
+}
+
+.LINKS {
   @apply text-[#444746] hover:text-[#2962ff]
 }
 
-/* css for text */
+@media only screen and (max-width : 770px) {
+  .SECTION--primary {
+    background: #f6e6d9;
+    padding: 30px 10%;
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 50px;
+  }
 
-.headings {
-  @apply text-5xl max-md:text-3xl text-[#000f22] font-bold
-}
-
-.sec_heading {
-  @apply text-3xl max-md:text-lg text-[#000f22]
-}
-
-.des {
-  @apply text-[#4b5563]
-}
-
-/* css for dark box */
-
-.dark-box {
-  /* background: linear-gradient(135deg, #03122e, #173d85, #03112c); */
-  @apply bg-blue-950
+  .SECTION--secondary {
+    background: #fcf7f1;
+    padding: 30px 10%;
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 50px;
+  }
 }
 
 
-.dark-box h1 {
-  color: white;
-}
-
-.dark-box h2 {
-  color: white;
-}
-
-.dark-box div {
-  @apply border-slate-200
-}
-
-.dark-box svg {
-  color: white;
-}
+/* /////////////////////////////////// */
 
 
-/* ////////////////////////// */
 
-:root{
+
+
+:root {
   --red-color: #ffffff;
-  --bg-color:#111827;
+  --bg-color: #111827;
 }
 
 
 
 .kalam_font {
-    font-family: "Great Vibes", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
+  font-family: "Great Vibes", serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
-  .custom_bg {
-    background-image: url(../../public/images/BG.png);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
+.custom_bg {
+  background-image: url(../../public/images/BG.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
-  /* slider portfolio */
+/* slider portfolio */
 
 .abcde .slick-track {
   padding: 50px 0;
-} 
+}
 
 /* MUJEEB CSS */
 
 /* SINCE Text */
 
-.sin{
-  -webkit-text-stroke: 1px var(--red-color); 
+.sin {
+  -webkit-text-stroke: 1px var(--red-color);
 }
 
 
 /* Footer Animation */
 
 
-.footer_animation{
+.footer_animation {
   height: 100%;
   width: 100%;
   background-color: var(--red-color);
   position: absolute;
   top: 40px;
   left: 0;
-  transition: all .5s;    
+  transition: all .5s;
 }
-.s_link{
+
+.s_link {
   overflow: hidden;
 }
 
@@ -113,19 +161,15 @@
   top: 0;
   z-index: 1;
 }
-.s_link:hover .icon{
+
+.s_link:hover .icon {
   @apply text-gray-900
 }
 
-.footer_card{
-  @apply
-   flex
-    flex-col 
-    gap-6
+.footer_card {
+  @apply flex flex-col gap-6
 }
-.child{
-  @apply
-   flex
-    flex-col 
-    gap-3
+
+.child {
+  @apply flex flex-col gap-3
 }
