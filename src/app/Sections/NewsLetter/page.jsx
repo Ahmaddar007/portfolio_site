@@ -17,7 +17,7 @@ const NewsLetter = () => {
 
   return (
     <div
-      className="w-full bg-gradient-to-l from-[#23305c] to-[#1e2e64] pt-44 relative"
+      className="w-full bg-white pt-44 relative"
       // data-aos="fade-in"
     >
       {/* Google Maps Embed */}
@@ -44,7 +44,7 @@ const NewsLetter = () => {
           <svg
             viewBox="0 0 224 12"
             fill="currentColor"
-            className="w-full -mb-1 text-blue-950"
+            className="w-full -mb-1 text-[#a16c3d]"
             preserveAspectRatio="none"
           >
             <path d="M0,0 C48.8902582,6.27314026 86.2235915,9.40971039 112,9.40971039 C137.776408,9.40971039 175.109742,6.27314026 224,0 L224,12.0441132 L0,12.0441132 L0,0 Z"></path>
@@ -60,7 +60,7 @@ const NewsLetter = () => {
           <div className="relative max-w-2xl mx-auto text-center">
             {/* Title */}
             <h2
-              className="mb-6 font-sans text-3xl font-bold tracking-tight text-white"
+              className="mb-6 heading--primary"
               data-aos="fade-down"
               data-aos-delay="500"
             >
@@ -69,7 +69,7 @@ const NewsLetter = () => {
 
             {/* Description */}
             <p
-              className="mb-6 text-base text-indigo-200"
+              className="mb-6 text--primary"
               data-aos="fade-up"
               data-aos-delay="600"
             >
@@ -88,10 +88,10 @@ const NewsLetter = () => {
                 placeholder="Email"
                 required=""
                 type="text"
-                className="flex-grow w-full h-12 px-4 text-black transition duration-200 border-2 border-transparent appearance-none bg-white focus:border-teal-accent-700 focus:outline-none focus:shadow-outline"
+                className="flex-grow w-full h-12 px-4 text-gray-900 transition rounded-l-2xl duration-200 border-2 border-[#a8744a] appearance-none bg-white focus:border-teal-accent-700 focus:outline-none focus:shadow-outline"
               />
               <Button
-                className="bg-blue-800 p-6 text-white rounded-none"
+                className="bg-[#a8744a] p-6 text-white rounded-none"
                 data-aos="fade-left"
                 data-aos-delay="800"
               >
@@ -101,7 +101,7 @@ const NewsLetter = () => {
 
             {/* Footer Text */}
             <p
-              className="w-full text-center mb-10 text-xs tracking-wide text-indigo-100"
+              className="w-full text-center mb-10 text-xs tracking-wide text-gray-900"
               data-aos="fade-up"
               data-aos-delay="900"
             >
@@ -113,7 +113,7 @@ const NewsLetter = () => {
             <a
               href="/"
               aria-label="Scroll down"
-              className="flex items-center justify-center w-10 h-10 mx-auto text-white duration-300 transform border border-slate-300 rounded-full hover:text-teal-accent-400 hover:border-teal-accent-400 hover:shadow hover:scale-110"
+              className="flex items-center justify-center w-10 h-10 mx-auto text-[#a8744a] duration-300 transform border border-[#a8744a] rounded-full hover:text-teal-accent-400 hover:border-teal-accent-400 hover:shadow hover:scale-110"
               data-aos="fade-up"
               data-aos-delay="1000"
             >
@@ -131,6 +131,7 @@ const NewsLetter = () => {
         </div>
 
       </div>
+
     </div>
   );
 };

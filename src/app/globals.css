@@ -52,6 +52,13 @@
   font-style: normal;
 }
 
+.text--primary {
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-style: normal;
+  @apply text-gray-900
+}
+
 .data-\[focus-visible\=true\]\:outline-focus[data-focus-visible="true"] {
   outline-color: unset;
 }

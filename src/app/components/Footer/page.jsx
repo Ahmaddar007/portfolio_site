@@ -9,7 +9,6 @@ import { IoMdMail } from "react-icons/io";
 import Link from "next/link";
 
 const Footer = () => {
-  const [hoveredLink, setHoveredLink] = useState(null);
 
   useEffect(() => {
     AOS.init({
@@ -35,7 +34,7 @@ const Footer = () => {
   ];
 
   return (
-    <div className="w-full relative bg-blue-950 text-gray-300">
+    <div className="w-full relative bg-[#a16c3d] text-white">
       <footer className="flex flex-col gap-6 p-[5%]">
         <div className="ft_cont grid grid-cols-[1.5fr,1fr,1fr,1fr] py-[3%] gap-6">
           <div
@@ -44,14 +43,14 @@ const Footer = () => {
             data-aos-delay="0"
           >
             <div className="logo flex gap-2 items-center">
-              <BiSolidUpArrow className="text-[2rem] text-gray-100" />
-              <h1 className="text-2xl font-bold text-gray-100">Alishaimpex</h1>
+              <BiSolidUpArrow className="text-[2rem] text-white" />
+              <h1 className="text-2xl font-bold text-white">Alishaimpex</h1>
             </div>
             <div className="sin">
               <h2 className="text-transparent text-[4rem]">since 1980.</h2>
             </div>
-            <span className="mt-8 text-gray-500">
-              2025 <span className="text-gray-200 cursor-pointer">Alishaimpex.</span> All Rights reserved.
+            <span className="mt-8 text-white">
+              2025 <span className="text-white cursor-pointer">Alishaimpex.</span> All Rights reserved.
             </span>
           </div>
 
@@ -62,7 +61,7 @@ const Footer = () => {
           >
             <div className="child">
               <span className="text-[1.5rem] font-semibold">Faisalabad</span>
-              <p className="font-light text-gray-400 text-base leading-6">
+              <p className="font-light text-white text-base leading-6">
                 523 Sylvan Ave, 5th Floor <br /> Mountain View, CA 94041 USA
               </p>
             </div>
@@ -100,14 +99,14 @@ const Footer = () => {
               <span className="text-[1.5rem] font-semibold">Contact</span>
               <ul className="list-none px-2 mt-2">
                 <li
-                  className="font-light text-lg hover:text-gray-200 cursor-pointer transition-all"
+                  className="font-light text-lg hover:text-white cursor-pointer transition-all"
                   data-aos="fade-up"
                   data-aos-delay="1000"
                 >
                   +1934719 8948
                 </li>
                 <li
-                  className="font-light text-lg hover:text-gray-200 cursor-pointer transition-all"
+                  className="font-light text-lg hover:text-white cursor-pointer transition-all"
                   data-aos="fade-up"
                   data-aos-delay="1200"
                 >
@@ -122,7 +121,7 @@ const Footer = () => {
             >
               <span className="text-[1.5rem] font-semibold">Email</span>
               <Link href="/">
-                <span className="font-light text-gray-400 hover:text-gray-200">support@alishaimpex.com</span>
+                <span className="font-light text-white hover:text-white">support@alishaimpex.com</span>
               </Link>
             </div>
           </div>
@@ -138,11 +137,7 @@ const Footer = () => {
                 <Link
                   key={index}
                   href={`/${menu.Title.replace(/\\s+/g, "").toLowerCase()}`}
-                  className={`transition-all duration-200 pl-2 border-l-2 border-transparent ${
-                    hoveredLink === index ? "text-gray-100 border-gray-500" : "hover:text-gray-100 hover:border-gray-500"
-                  }`}
-                  onMouseEnter={() => setHoveredLink(index)}
-                  onMouseLeave={() => setHoveredLink(null)}
+                  className="transition-all duration-200 pl-2 border-l-2 border-transparent hover:border-white"
                   data-aos="fade-up"
                   data-aos-delay={`${1800 + index * 200}`}
                 >
@@ -154,17 +149,17 @@ const Footer = () => {
         </div>
 
         <hr
-          className="w-full border-gray-700"
+          className="w-full border-white"
           data-aos="fade-up"
           data-aos-delay="2200"
         />
 
         <span
-          className="self-center text-gray-500 text-sm"
+          className="self-center text-white text-sm"
           data-aos="fade-up"
           data-aos-delay="2400"
         >
-          Copyright @ 2025 <span className="text-gray-200 cursor-pointer">Alishaimpex.</span> All Rights reserved.
+          Copyright @ 2025 <span className="text-white cursor-pointer">Alishaimpex.</span> All Rights reserved.
         </span>
       </footer>
     </div>
