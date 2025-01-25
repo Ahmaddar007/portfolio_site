@@ -137,7 +137,7 @@ const Footer = () => {
                 <Link
                   key={index}
                   href={`/${menu.Title.replace(/\\s+/g, "").toLowerCase()}`}
-                  className="transition-all duration-200 pl-2 border-l-2 border-transparent hover:border-white"
+                  className="transition-all duration-200 pl-2 border-l-2 border-transparent hover:font-semibold hover:border-white"
                   data-aos="fade-up"
                   data-aos-delay={`${1800 + index * 200}`}
                 >
