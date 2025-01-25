@@ -188,7 +188,7 @@
 }
 
 .s_link:hover .icon {
-  @apply text-gray-900
+  @apply text-[#a8744a]
 }
 
 .footer_card {
