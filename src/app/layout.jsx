@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <NextUIProvider>
-          <div className="flex flex-col items-center">
+          <div className="flex overflow-hidden flex-col items-center">
             <Header />
             {children}
             <Footer />
