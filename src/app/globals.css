@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* product page */
+
+.product_page {
+  background-image: url(./../../public/product/bg.png);
+}
+
 /* /////////////////////////////////// */
 
 .bgImage {

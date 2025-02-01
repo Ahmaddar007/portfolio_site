@@ -27,9 +27,9 @@ export default function RootLayout({ children }) {
       <body className="overflow-x-hidden">
         <NextUIProvider>
           <div className="flex flex-col items-center">
-            <Header />
+            {/* <Header /> */}
             {children}
-            <Footer />
+            {/* <Footer /> */}
           </div>
         </NextUIProvider>
       </body>
