@@ -5,7 +5,6 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Modal from "./Modal";
 
-// Import logo images properly
 import logo1 from "@/../../public/product/1.png";
 import logo2 from "@/../../public/product/2.png";
 import logo3 from "@/../../public/product/3.png";
@@ -15,8 +14,9 @@ import logo6 from "@/../../public/product/6.png";
 import logo7 from "@/../../public/product/7.png";
 
 const Product = () => {
-    const [panelType, setPanelType] = useState("color"); // 'color' or 'logo'
-    const [selectedColor, setSelectedColor] = useState("#4A90E2"); // Default color for the 3D object
+    const [panelType, setPanelType] = useState("color");
+    const [selectedColor, setSelectedColor] = useState("#4A90E2");
+    const [selectedLogo, setSelectedLogo] = useState(null);
 
     const colorOptions = [
         { name: "Red", hex: "#FF5733" },
@@ -34,75 +34,81 @@ const Product = () => {
     const logoOptions = [logo1, logo2, logo3, logo4, logo5, logo6, logo7];
 
     return (
-        <div className="product_page bg-no-repeat bg-cover bg-center overflow-hidden w-full h-screen">
-            <div className="w-full flex items-center justify-between bg-opacity-10 bg-white">
-                <h1 className="text-white text-center bg-[#a8744a] font-semibold p-2 w-1/4">
-                    Customize
-                </h1>
-                <Button className="rounded-none p-5 bg-[#a8744a] text-white font-semibold">
-                    Buy Now
-                </Button>
-            </div>
-            <div className="w-full flex">
-                <div className="bg-white bg-opacity-10 h-screen w-1/4">
-                    <div className="grid grid-cols-3">
+        <div className="w-full h-screen bg-gray-50 border border-gray-300">
+
+            {/* Main Content */}
+            <div className="w-full gap-5 h-full grid grid-cols-4 p-4">
+
+                {/* Side Panel */}
+                <div className="col-span-1 bg-white shadow-lg p-6 border border-gray-300 rounded-xl backdrop-blur-md bg-opacity-80">
+
+                    <div className="grid grid-cols-3 mb-6">
                         <Button
-                            className="rounded-none"
-                            onClick={() => setPanelType("color")}
+                            className={`rounded-none py-2 ${panelType === "color" ? "bg-gray-500 text-white" : "bg-gray-200 text-gray-700 hover:bg-gray-300"}`}
+                            onPress={() => setPanelType("color")}
                         >
                             Color
                         </Button>
                         <Button
-                            className="rounded-none"
-                            onClick={() => setPanelType("logo")}
+                            className={`rounded-none py-2 ${panelType === "logo" ? "bg-gray-500 text-white" : "bg-gray-200 text-gray-700 hover:bg-gray-300"}`}
+                            onPress={() => setPanelType("logo")}
                         >
                             Logo
                         </Button>
-                        <Button className="rounded-none">Stock</Button>
+                        <Button className="rounded-none py-2 bg-gray-200 text-gray-700 hover:bg-gray-300">Stock</Button>
                     </div>
-                    <div className="w-full p-2">
-                        <div className="w-full p-4 bg-white bg-opacity-20 rounded-md text-white">
-                            {panelType === "color" ? (
-                                <>
-                                    <h2 className="mb-5">Choose Your Shirt Color</h2>
-                                    <div className="flex flex-wrap gap-2">
-                                        {colorOptions.map((color, index) => (
+
+
+                    {/* Panel Content */}
+                    <div className="w-full">
+                        {panelType === "color" ? (
+                            <>
+                                <h2 className="text-lg font-semibold text-gray-900 mb-4">Choose Your Color</h2>
+                                <div className="flex flex-wrap gap-3">
+                                    {colorOptions.map((color, index) => (
+                                        <div key={index} className="text-center">
                                             <Button
-                                                key={index}
-                                                className="w-20 flex items-center justify-center text-white font-semibold rounded-full"
+                                                className="w-12 min-w-12 min-h-12 h-12 rounded-full border border-gray-400 shadow-md hover:scale-110 transition"
                                                 style={{ backgroundColor: color.hex }}
-                                                onClick={() => setSelectedColor(color.hex)} // Set selected color
-                                            >
-                                                {color.name}
-                                            </Button>
-                                        ))}
-                                    </div>
-                                </>
-                            ) : (
-                                <>
-                                    <h2 className="mb-5">Choose Your Logo</h2>
-                                    <div className="flex flex-wrap gap-3">
-                                        {logoOptions.map((logo, index) => (
-                                            <div key={index} className="p-2 bg-white rounded-md cursor-pointer">
-                                                <Image
-                                                    src={logo}
-                                                    alt={`Logo ${index + 1}`}
-                                                    width={64}
-                                                    height={64}
-                                                    className="object-contain"
-                                                />
-                                            </div>
-                                        ))}
-                                    </div>
-                                </>
-                            )}
-                        </div>
+                                                onClick={() => setSelectedColor(color.hex)}
+                                            />
+                                            <p className="text-sm text-gray-700 mt-1 font-medium">{color.name}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </>
+                        ) : (
+                            <>
+                                <h2 className="text-lg font-semibold text-gray-900 mb-4">Choose Your Logo</h2>
+                                <div className="flex flex-wrap gap-3">
+                                    {logoOptions.map((logo, index) => (
+                                        <div
+                                            key={index}
+                                            className={`p-2 border-2 rounded-lg cursor-pointer hover:border-blue-500 transition ${selectedLogo === logo ? "border-blue-600 shadow-lg" : "border-gray-300"}`}
+                                            onClick={() => setSelectedLogo(logo)}
+                                        >
+                                            <Image
+                                                src={logo}
+                                                alt={`Logo ${index + 1}`}
+                                                width={64}
+                                                height={64}
+                                                className="object-contain"
+                                            />
+                                        </div>
+                                    ))}
+                                </div>
+                            </>
+                        )}
                     </div>
+
                 </div>
-                <div className="p-2 border-3 w-full border-white">
-                    <Modal selectedColor={selectedColor} /> {/* Pass selected color */}
+
+                {/* 3D Viewer Section */}
+                <div className="col-span-3 p-6 bg-gray-100 border border-gray-300 rounded-xl shadow-inner">
+                    <Modal selectedColor={selectedColor} selectedLogo={selectedLogo} />
                 </div>
             </div>
+
         </div>
     );
 };

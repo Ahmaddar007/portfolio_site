@@ -6,7 +6,7 @@ import Tshirt from "./Tshirt";
 
 const Modal = ({ selectedColor }) => {
     return (
-        <div className="h-screen w-full">
+        <div className="w-full">
             <Canvas
                 shadows
                 gl={{ preserveDrawingBuffer: true }}
@@ -21,7 +21,7 @@ const Modal = ({ selectedColor }) => {
                     <directionalLight position={[5, 10, 5]} intensity={1} castShadow />
 
                     {/* 3D Tshirt */}
-                    <Tshirt color={selectedColor} />
+                    {/* <Tshirt color={selectedColor} /> */}
 
                     {/* Orbit Controls */}
                     <OrbitControls
