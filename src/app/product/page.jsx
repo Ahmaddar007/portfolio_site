@@ -3,7 +3,6 @@
 import { Button } from "@nextui-org/react";
 import React, { useState } from "react";
 import Image from "next/image";
-import Modal from "./Modal";
 
 import logo1 from "@/../../public/product/1.png";
 import logo2 from "@/../../public/product/2.png";
@@ -12,6 +11,7 @@ import logo4 from "@/../../public/product/4.png";
 import logo5 from "@/../../public/product/5.png";
 import logo6 from "@/../../public/product/6.png";
 import logo7 from "@/../../public/product/7.png";
+import ModalViewer from "../components/ModelViewer/page";
 
 const Product = () => {
     const [panelType, setPanelType] = useState("color");
@@ -70,7 +70,7 @@ const Product = () => {
                                             <Button
                                                 className="w-12 min-w-12 min-h-12 h-12 rounded-full border border-gray-400 shadow-md hover:scale-110 transition"
                                                 style={{ backgroundColor: color.hex }}
-                                                onClick={() => setSelectedColor(color.hex)}
+                                                onPress={() => setSelectedColor(color.hex)}
                                             />
                                             <p className="text-sm text-gray-700 mt-1 font-medium">{color.name}</p>
                                         </div>
@@ -105,7 +105,7 @@ const Product = () => {
 
                 {/* 3D Viewer Section */}
                 <div className="col-span-3 p-6 bg-gray-100 border border-gray-300 rounded-xl shadow-inner">
-                    <Modal selectedColor={selectedColor} selectedLogo={selectedLogo} />
+                    <ModalViewer selectedColor={selectedColor} />
                 </div>
             </div>
 
