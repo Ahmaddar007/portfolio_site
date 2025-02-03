@@ -4,30 +4,35 @@ import { OrbitControls } from "@react-three/drei";
 import Hoodie from "./Hoodie";
 
 const ModalViewer = ({ selectedColor }) => {
-    return (
-        <div className="w-full h-full flex items-center justify-center">
-            <Canvas camera={{ position: [0, 2, 5] }}>
-                <ambientLight intensity={0.7} />
-                <directionalLight position={[2, 5, 2]} intensity={1} />
-                
-                <OrbitControls 
-                    enableZoom={true} 
-                    enablePan={false} 
-                    maxPolarAngle={Math.PI / 2.5} // Prevents flipping
-                    minPolarAngle={Math.PI / 4}   // Restricts downward view
-                    maxAzimuthAngle={Math.PI / 4}  // Restricts side view
-                    minAzimuthAngle={-Math.PI / 4} // Restricts side view
-                    dampingFactor={0.1}            // Smooth camera movement
-                    rotateSpeed={0.5}              // Slows down rotation
-                />
+  return (
+    <div className="w-full h-full flex items-center justify-center">
+      <Canvas
+        shadows
+        gl={{ preserveDrawingBuffer: true }}
+        camera={{ position: [3, 2, 3], fov: 25 }} // Adjust FOV
+      >
+        {/* Ambient Light for soft overall lighting */}
+        <ambientLight intensity={0.5} />
+        
+        {/* Directional Lights for studio lighting effect */}
+        <directionalLight position={[5, 10, 5]} intensity={0.8} />
+        <directionalLight position={[-5, 10, 5]} intensity={0.8} />
+        <directionalLight position={[0, 10, -5]} intensity={0.8} />
+        <directionalLight position={[5, 10, -5]} intensity={0.8} />
 
-                {/* Slightly tilted forward for better initial view */}
-                <group rotation={[Math.PI / 12, 0, 0]}>  
-                    <Hoodie color={selectedColor} />
-                </group>
-            </Canvas>
-        </div>
-    );
+        {/* Move the hoodie down by adjusting its position */}
+        <Hoodie color={selectedColor} scale={[1.8, 1.8, 1.8]} />
+
+        <OrbitControls
+          target={[0, 2.5, 0]} // Ensures focus remains on the hoodie
+          enableZoom={false} // Zoom is disabled
+          enablePan={false} // Panning is disabled (default "pan" simulated by camera position)
+          maxPolarAngle={Math.PI / 1.94} // Restricts upward rotation
+          minPolarAngle={Math.PI / 4} // Restricts downward rotation
+        />
+      </Canvas>
+    </div>
+  );
 };
 
 export default ModalViewer;

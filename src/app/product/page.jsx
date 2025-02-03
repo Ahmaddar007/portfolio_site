@@ -29,6 +29,7 @@ const Product = () => {
         { name: "Lime", hex: "#57FF33" },
         { name: "Sky Blue", hex: "#33A1FF" },
         { name: "Rose", hex: "#FF3357" },
+        { name: "black", hex: "#000000" },
     ];
 
     const logoOptions = [logo1, logo2, logo3, logo4, logo5, logo6, logo7];

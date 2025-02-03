@@ -4,7 +4,7 @@ import React from "react";
 import { useGLTF } from "@react-three/drei";
 import { MeshStandardMaterial } from "three";
 
-const Hoodie = ({ color = "#ffffff" }) => {
+const Hoodie = ({ color , scale }) => {
   const { nodes, materials } = useGLTF("/Hoodie.glb");
 
   // Create a new material instance with the selected color
@@ -16,30 +16,34 @@ const Hoodie = ({ color = "#ffffff" }) => {
 
   return (
     <group dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]}>
+      <group position={[ 0 ,0 ,0 ]} rotation={[-Math.PI / 2, 0, 0]}>
         <mesh
           castShadow
           receiveShadow
           geometry={nodes.Object_2.geometry}
           material={coloredMaterial} // Apply new material
+          scale={scale} // Apply scale to the mesh
         />
         <mesh
           castShadow
           receiveShadow
           geometry={nodes.Object_3.geometry}
           material={coloredMaterial}
+          scale={scale} // Apply scale to the mesh
         />
         <mesh
           castShadow
           receiveShadow
           geometry={nodes.Object_4.geometry}
           material={coloredMaterial}
+          scale={scale} // Apply scale to the mesh
         />
         <mesh
           castShadow
           receiveShadow
           geometry={nodes.Object_5.geometry}
           material={coloredMaterial}
+          scale={scale} // Apply scale to the mesh
         />
       </group>
     </group>
