@@ -15,8 +15,13 @@ import ModalViewer from "../components/ModelViewer/page";
 
 const Product = () => {
     const [panelType, setPanelType] = useState("color");
+    
     const [selectedColor, setSelectedColor] = useState("#4A90E2");
-    const [selectedLogo, setSelectedLogo] = useState(null);
+    const [selectedLogo, setSelectedLogo] = useState(logo1);
+
+    const [logoS, setLogoS] = useState(0)
+	const [logoP, setLogoP] = useState(2)
+
 
     const colorOptions = [
         { name: "Red", hex: "#FF5733" },
@@ -106,7 +111,7 @@ const Product = () => {
 
                 {/* 3D Viewer Section */}
                 <div className="col-span-3 p-6 bg-gray-100 border border-gray-300 rounded-xl shadow-inner">
-                    <ModalViewer selectedColor={selectedColor} />
+                    <ModalViewer selectedColor={selectedColor} selectedLogo={selectedLogo} logoP={logoP} logoS={logoS} />
                 </div>
             </div>
 

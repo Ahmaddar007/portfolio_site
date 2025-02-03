@@ -1,9 +1,8 @@
-"use client"
-
 import React from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import Hoodie from "./Hoodie";
+import Box from "./Box";
 
 const ModalViewer = ({ selectedColor, selectedLogo, logoP, logoS }) => {
   return (
@@ -25,6 +24,14 @@ const ModalViewer = ({ selectedColor, selectedLogo, logoP, logoS }) => {
         {/* Move the hoodie down by adjusting its position */}
         <Hoodie color={selectedColor} selectedLogo={selectedLogo} logoP={logoP} logoS={logoS} scale={[1.8, 1.8, 1.8]} />
         {/* <Box /> */}
+
+        {/* <OrbitControls
+          target={[0, 0, 0]} // Ensures focus remains on the hoodie
+          enableZoom={true} // Zoom is disabled
+          enablePan={true} // Panning is disabled (default "pan" simulated by camera position)
+          maxPolarAngle={Math.PI / 1.94} // Restricts upward rotation
+          minPolarAngle={Math.PI / 4} // Restricts downward rotation
+        /> */}
         
         <OrbitControls
           target={[0, 2.5, 0]} // Ensures focus remains on the hoodie
