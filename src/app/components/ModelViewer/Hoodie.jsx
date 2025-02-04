@@ -19,11 +19,7 @@ const Hoodie = ({ scale, color, selectedLogo, logoPosition }) => {
   const { nodes } = useGLTF("/Hoodie.glb");
 
   // Check if selectedLogo is valid (i.e., not undefined or null)
-  const logo = selectedLogo?.url
-    ? useTexture(selectedLogo.url)
-    : selectedLogo?.src
-    ? useTexture(selectedLogo.src)
-    : null;
+  const logo = useTexture(selectedLogo); // Only load texture if selectedLogo exists
 
   // Optimize material creation for the hoodie (non-transparent)
   const coloredMaterial = useMemo(
@@ -38,21 +34,12 @@ const Hoodie = ({ scale, color, selectedLogo, logoPosition }) => {
   );
 
   // Material for the decal to avoid transparency
-  const decalMaterial = useMemo(
-    () => new MeshBasicMaterial({ map: logo, transparent: false }),
-    [logo]
-  );
+  const decalMaterial = useMemo(() => new MeshBasicMaterial({ map: logo, transparent: false }), [logo]);
 
   return (
     <group dispose={null}>
       <group position={[0, 0, 0]} rotation={[-Math.PI / 2, 0, 0]}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_2.geometry}
-          scale={scale}
-          material={coloredMaterial}
-        >
+        <mesh castShadow receiveShadow geometry={nodes.Object_2.geometry} scale={scale} material={coloredMaterial}>
           {/* Only render logo if it is valid */}
           {logo && selectedLogo && (
             <Decal
@@ -64,27 +51,9 @@ const Hoodie = ({ scale, color, selectedLogo, logoPosition }) => {
             />
           )}
         </mesh>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_3.geometry}
-          scale={scale}
-          material={coloredMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_4.geometry}
-          scale={scale}
-          material={coloredMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_5.geometry}
-          scale={scale}
-          material={coloredMaterial}
-        />
+        <mesh castShadow receiveShadow geometry={nodes.Object_3.geometry} scale={scale} material={coloredMaterial} />
+        <mesh castShadow receiveShadow geometry={nodes.Object_4.geometry} scale={scale} material={coloredMaterial} />
+        <mesh castShadow receiveShadow geometry={nodes.Object_5.geometry} scale={scale} material={coloredMaterial} />
       </group>
     </group>
   );
