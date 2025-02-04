@@ -14,7 +14,7 @@ const Product = () => {
   const [error, setError] = useState(null);
 
   const colorOptions = [
-    { name: "Red", hex: "#FF5733" },
+    { name: "White", hex: "#ffffff" },
     { name: "Green", hex: "#33FF57" },
     { name: "Blue", hex: "#3357FF" },
     { name: "Pink", hex: "#FF33A1" },
