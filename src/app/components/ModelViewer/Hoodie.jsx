@@ -1,25 +1,47 @@
-"use client";
-
-import React, { useEffect } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import { useGLTF, Decal, useTexture } from "@react-three/drei";
-import { MeshPhysicalMaterial, MeshStandardMaterial } from "three";
+import { MeshPhysicalMaterial, MeshBasicMaterial } from "three";
 import { degToRad } from "three/src/math/MathUtils";
 
-const Hoodie = ({ scale, color , selectedLogo }) => {
+const Hoodie = ({ scale, color, selectedLogo, logoPosition }) => {
+  const [logoP, setLogoP] = useState(0.12);
 
-  console.log(selectedLogo.src,"selectedLogo")
+  useEffect(() => {
+    if (logoPosition === "right") {
+      setLogoP(0.12);
+    } else if (logoPosition === "center") {
+      setLogoP(0);
+    } else {
+      setLogoP(-0.1);
+    }
+  }, [logoPosition]);
 
   const { nodes } = useGLTF("/Hoodie.glb");
 
-  const logo = useTexture(selectedLogo.src);
+  // Check if selectedLogo is valid (i.e., not undefined or null)
+  const logo = selectedLogo?.url
+    ? useTexture(selectedLogo.url)
+    : selectedLogo?.src
+    ? useTexture(selectedLogo.src)
+    : null;
 
+  // Optimize material creation for the hoodie (non-transparent)
+  const coloredMaterial = useMemo(
+    () =>
+      new MeshPhysicalMaterial({
+        color,
+        roughness: 0.5,
+        transparent: false,
+        metalness: 0.1,
+      }),
+    [color]
+  );
 
-  // Create a new material instance with the selected color
-  const coloredMaterial = new MeshPhysicalMaterial({
-    color,
-    roughness: 0.5, // Adjust surface reflection
-    metalness: 0.1, // Makes it more fabric-like
-  });
+  // Material for the decal to avoid transparency
+  const decalMaterial = useMemo(
+    () => new MeshBasicMaterial({ map: logo, transparent: false }),
+    [logo]
+  );
 
   return (
     <group dispose={null}>
@@ -31,26 +53,17 @@ const Hoodie = ({ scale, color , selectedLogo }) => {
           scale={scale}
           material={coloredMaterial}
         >
-          {/* Apply the logo decal on the front */}
-          <Decal
-            // debug
-            position={[0.1, 0.12, 1.5]} // Adjust front position      z-axis x-axis  y-axis
-            rotation={[0, degToRad(90), degToRad(90)]} // Ensure it's facing forward
-            scale={[0.1, 0.1, 0.5]} // Adjust logo size  x  y z
-            map={logo}
-          >
-            <MeshPhysicalMaterial
-              transparent
+          {/* Only render logo if it is valid */}
+          {logo && selectedLogo && (
+            <Decal
+              position={[0.1, logoP, 1.5]} // Adjusted dynamically based on logoPosition
+              rotation={[0, degToRad(90), degToRad(90)]}
+              scale={[0.1, 0.1, 0.3]}
               map={logo}
-              depthTest={false} // Prevents z-fighting
-              polygonOffset
-              polygonOffsetFactor={-1}
-              roughness={0.5} // Adjust for shininess
-              metalness={0.1} // Adds slight metallic effect
+              material={decalMaterial}
             />
-          </Decal>
+          )}
         </mesh>
-
         <mesh
           castShadow
           receiveShadow
@@ -79,5 +92,5 @@ const Hoodie = ({ scale, color , selectedLogo }) => {
 
 export default Hoodie;
 
-// Preload the model
+// Preload assets
 useGLTF.preload("/Hoodie.glb");
