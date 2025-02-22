@@ -9,7 +9,7 @@ import {
   DrawerFooter,
   Button,
   useDisclosure,
-} from "@nextui-org/react";
+} from "@heroui/react";
 
 export default function Content() {
   const {isOpen, onOpen, onOpenChange} = useDisclosure();

@@ -1,5 +1,5 @@
 import "./globals.css";
-import { NextUIProvider } from "@nextui-org/react";
+import { HeroUIProvider } from "@heroui/react";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { ourFileRouter } from "./api/uploadthing/core";
 import { extractRouterConfig } from "uploadthing/server";
@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
         ></link>
       </head>
       <body className="overflow-x-hidden">
-        <NextUIProvider>
+        <HeroUIProvider>
           <div className="flex flex-col items-center">
             {/* <Header /> */}
             <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
@@ -41,7 +41,7 @@ export default function RootLayout({ children }) {
             {children}
             {/* <Footer /> */}
           </div>
-        </NextUIProvider>
+        </HeroUIProvider>
       </body>
     </html>
   );

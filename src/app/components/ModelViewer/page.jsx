@@ -5,7 +5,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import Hoodie from "./Hoodie";
 
-const ModalViewer = ({ selectedColor, selectedLogo, logoPosition }) => {
+const ModalViewer = ({ selectedColor, selectedLogo, logoPosition , logoSize }) => {
   return (
     <div className="w-full h-full flex items-center justify-center">
       <Canvas
@@ -24,6 +24,7 @@ const ModalViewer = ({ selectedColor, selectedLogo, logoPosition }) => {
 
         {/* Pass logoPosition to Hoodie */}
         <Hoodie 
+          logoSize={logoSize}
           color={selectedColor} 
           selectedLogo={selectedLogo} 
           logoPosition={logoPosition} 
