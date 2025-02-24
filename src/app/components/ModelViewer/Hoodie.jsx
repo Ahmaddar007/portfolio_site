@@ -3,9 +3,8 @@ import { useGLTF, Decal, useTexture } from "@react-three/drei";
 import { MeshPhysicalMaterial, MeshBasicMaterial } from "three";
 import { degToRad } from "three/src/math/MathUtils";
 
-const Hoodie = ({ scale, color, selectedLogo, logoPosition , logoSize }) => {
+const Hoodie = ({ scale, color, selectedLogo, logoPosition }) => {
   const [logoP, setLogoP] = useState(0.12);
-  const [logoS, setLogoS] = useState(0.12);
 
   useEffect(() => {
     if (logoPosition === "right") {
@@ -16,17 +15,6 @@ const Hoodie = ({ scale, color, selectedLogo, logoPosition , logoSize }) => {
       setLogoP(-0.1);
     }
   }, [logoPosition]);
-
-  useEffect(() => {
-    if (logoSize === "small") {
-      setLogoS(0.1);
-    } else if (logoSize === "medium") {
-      setLogoS(0.2);
-    } else {
-      setLogoS(0.3);
-
-    }
-  }, [logoSize]);
 
   const { nodes } = useGLTF("/Hoodie.glb");
 
@@ -55,10 +43,9 @@ const Hoodie = ({ scale, color, selectedLogo, logoPosition , logoSize }) => {
           {/* Only render logo if it is valid */}
           {logo && selectedLogo && (
             <Decal
-            // debug
-              position={[0.1, logoP, 1.425]} // Adjusted dynamically based on logoPosition
+              position={[0.1, logoP, 1.5]} // Adjusted dynamically based on logoPosition
               rotation={[0, degToRad(90), degToRad(90)]}
-              scale={logoS}
+              scale={[0.1, 0.1, 0.3]}
               map={logo}
               material={decalMaterial}
             />

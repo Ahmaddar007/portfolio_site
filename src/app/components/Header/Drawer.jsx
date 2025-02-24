@@ -7,7 +7,7 @@ import {
   DrawerHeader,
   DrawerBody,
   Button,
-} from "@heroui/react";
+} from "@nextui-org/react";
 import { Menu } from "lucide-react";
 
 export default function SideDrawer() {

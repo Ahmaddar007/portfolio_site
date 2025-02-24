@@ -1,18 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Button } from "@heroui/react";
+import { Button } from "@nextui-org/react";
 import ModalViewer from "../components/ModelViewer/page";
-import Stock from "./Stock";
 
 const Product = () => {
   const [panelType, setPanelType] = useState("color");
   const [selectedColor, setSelectedColor] = useState("#4A90E2");
-  const [selectedLogo, setSelectedLogo] = useState(
-    "https://utfs.io/f/vm2okaME29juIbAIO5rumr8HTLDGP7M1wWp2qZcBhf5lR0nk"
-  );
+  const [selectedLogo, setSelectedLogo] = useState("https://utfs.io/f/vm2okaME29juIbAIO5rumr8HTLDGP7M1wWp2qZcBhf5lR0nk");
   const [logoPosition, setLogoPosition] = useState("right");
-  const [logoSize, setLogoSize] = useState("medium");
   const [logoOptions, setLogoOptions] = useState();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -53,6 +49,7 @@ const Product = () => {
 
   return (
     <div className="w-full h-screen bg-gray-50 border border-gray-300">
+
       <div className="w-full gap-5 h-full grid grid-cols-4 p-4">
         {/* Side Panel */}
         <div className="col-span-1 bg-white shadow-lg p-6 border border-gray-300 rounded-xl backdrop-blur-md bg-opacity-80">
@@ -77,17 +74,7 @@ const Product = () => {
             >
               Logo
             </Button>
-            {/* <Button className="rounded-none py-2 bg-gray-200 text-gray-700 hover:bg-gray-300">
-              Stock
-            </Button> */}
-            <Button
-              className={`rounded-none py-2 ${
-                panelType === "stock"
-                  ? "bg-blue-600 text-white"
-                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-              }`}
-              onPress={() => setPanelType("stock")}
-            >
+            <Button className="rounded-none py-2 bg-gray-200 text-gray-700 hover:bg-gray-300">
               Stock
             </Button>
           </div>
@@ -114,12 +101,11 @@ const Product = () => {
                   ))}
                 </div>
               </>
-            ) : panelType === "logo" ? (
+            ) : (
               <>
                 <h2 className="text-lg font-semibold text-gray-900 mb-4 w-full text-center">
                   Logo Position
                 </h2>
-
                 <div className="rounded-full overflow-hidden mb-4 grid grid-cols-3">
                   <Button
                     className={`px-0 rounded-none py-2 ${
@@ -154,43 +140,6 @@ const Product = () => {
                 </div>
 
                 <h2 className="text-lg font-semibold text-gray-900 mb-4 w-full text-center">
-                  Logo Size
-                </h2>
-
-                <div className="rounded-full overflow-hidden mb-4 grid grid-cols-3">
-                  <Button
-                    className={`px-0 rounded-none py-2 ${
-                      logoSize === "small"
-                        ? "bg-gray-500 text-white"
-                        : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                    }`}
-                    onPress={() => setLogoSize("small")}
-                  >
-                    Small
-                  </Button>
-                  <Button
-                    className={`px-0 rounded-none py-2 ${
-                      logoSize === "medium"
-                        ? "bg-gray-500 text-white"
-                        : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                    }`}
-                    onPress={() => setLogoSize("medium")}
-                  >
-                    Medium
-                  </Button>
-                  <Button
-                    className={`px-0 rounded-none py-2 ${
-                      logoSize === "large"
-                        ? "bg-gray-500 text-white"
-                        : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                    }`}
-                    onPress={() => setLogoSize("large")}
-                  >
-                    Large
-                  </Button>
-                </div>
-
-                <h2 className="text-lg font-semibold text-gray-900 mb-4 w-full text-center">
                   Choose Your Logo
                 </h2>
 
@@ -200,6 +149,7 @@ const Product = () => {
                   <p className="text-center text-red-500">{error}</p>
                 ) : (
                   <div className="flex flex-wrap gap-3 justify-center">
+
                     {logoOptions?.logoUrls?.map((logo, index) => (
                       <div
                         key={index}
@@ -211,7 +161,7 @@ const Product = () => {
                         onClick={() => setSelectedLogo(logo)}
                       >
                         <img
-                          src={logo}
+                          src={logo} // Prioritize URL, fallback to src
                           alt={`Logo ${index + 1}`}
                           width={64}
                           height={64}
@@ -222,13 +172,6 @@ const Product = () => {
                   </div>
                 )}
               </>
-            ) : (
-              <Stock
-                logoSize={logoSize}
-                selectedColor={selectedColor}
-                selectedLogo={selectedLogo}
-                logoPosition={logoPosition}
-              />
             )}
           </div>
         </div>
@@ -236,7 +179,6 @@ const Product = () => {
         {/* 3D Viewer Section */}
         <div className="col-span-3 p-6 bg-gray-100 border border-gray-300 rounded-xl shadow-inner">
           <ModalViewer
-            logoSize={logoSize}
             selectedColor={selectedColor}
             selectedLogo={selectedLogo}
             logoPosition={logoPosition}

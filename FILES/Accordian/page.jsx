@@ -1,4 +1,4 @@
-import { Accordion, AccordionItem } from "@heroui/react";
+import { Accordion, AccordionItem } from "@nextui-org/react";
 
 export default function Accordian() {
   const defaultContent =

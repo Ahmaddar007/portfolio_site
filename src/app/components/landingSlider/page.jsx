@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { Spinner } from "@heroui/react"; // Assuming you're using @heroui/react
+import { Spinner } from "@nextui-org/react"; // Assuming you're using @nextui-org/react
 import IMG from "./../../../../public/banner/slider.png";
 
 export default function LandingSlider() {

@@ -1,6 +1,6 @@
 "use client";
 
-import { Avatar, AvatarGroup } from "@heroui/react";
+import { Avatar, AvatarGroup } from "@nextui-org/react";
 import React, { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa"; // Example icons
 import { TbStarsFilled } from "react-icons/tb";

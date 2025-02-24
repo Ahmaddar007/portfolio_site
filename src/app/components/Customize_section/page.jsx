@@ -7,7 +7,7 @@ import "aos/dist/aos.css"; // Import AOS styles
 
 import AOS from "aos";
 import Slider from "react-slick";
-import { Button } from "@heroui/react";
+import { Button } from "@nextui-org/react";
 import Image from "next/image";
 import V1 from "@/../../public/anime/1.png"
 import V2 from "@/../../public/anime/2.png"
