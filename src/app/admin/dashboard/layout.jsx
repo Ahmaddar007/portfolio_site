@@ -4,7 +4,7 @@ import React from "react";
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LogOut, X, Box } from "lucide-react"; // Assuming you're using Lucide icons
+import { LogOut, X, Box, CopyPlus } from "lucide-react"; // Assuming you're using Lucide icons
 import { Home } from "lucide-react";
 import { Button } from "@heroui/react";
 
@@ -19,6 +19,11 @@ const Layout = ({ children }) => {
       name: "Dashboard",
       path: "/admin/dashboard",
       icon: <Home className="w-5 h-5 text-gray-600" />,
+    },
+    {
+      name: "New Product",
+      path: "/admin/dashboard/new-product",
+      icon: <CopyPlus className="w-5 h-5 text-gray-600" />,
     },
     {
       name: "Products",
@@ -89,7 +94,7 @@ const Layout = ({ children }) => {
                   <Button
                     className="w-full bg-white text-gray-600 flex justify-start p-3 text-sm hover:bg-gray-50 hover:text-blue-500 transition-all duration-300 ease-in-out"
                     radius="none"
-                    onClick={logout}
+                    onPress={logout}
                   >
                     <LogOut className="w-5 h-5 mr-3" />
                     Logout

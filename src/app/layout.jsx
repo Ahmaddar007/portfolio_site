@@ -3,6 +3,7 @@ import { NextUIProvider } from "@nextui-org/react";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { ourFileRouter } from "./api/uploadthing/core";
 import { extractRouterConfig } from "uploadthing/server";
+import { ToastContainer } from "react-toastify";
 
 export default function RootLayout({ children }) {
   return (
@@ -41,7 +42,12 @@ export default function RootLayout({ children }) {
             {children}
             {/* <Footer /> */}
           </div>
+<<<<<<< Updated upstream
         </NextUIProvider>
+=======
+        </HeroUIProvider>
+        <ToastContainer />
+>>>>>>> Stashed changes
       </body>
     </html>
   );
