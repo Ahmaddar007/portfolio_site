@@ -1,6 +1,6 @@
 import React from "react";
 import SideDrawer from "./Drawer";
-import { Button } from "@nextui-org/react";
+import { Button } from "@heroui/react";
 
 const Header = () => {
   return (

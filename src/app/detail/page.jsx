@@ -1,4 +1,6 @@
-import { Button } from '@nextui-org/react';
+"use client"
+
+import { Button } from "@heroui/react";
 import React from 'react'
 import { FaStar } from "react-icons/fa";
 import detailimage from "@/../../public/product.png" 
