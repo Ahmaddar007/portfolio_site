@@ -266,6 +266,12 @@ const NewProducts = () => {
               </button>
             )}
           </CldUploadWidget>
+
+
+
+
+
+
         </div>
 
         <div className="mb-6">
