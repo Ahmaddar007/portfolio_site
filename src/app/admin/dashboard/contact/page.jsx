@@ -1,11 +1,69 @@
-import React from 'react'
+"use client";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableColumn,
+  TableHeader,
+  TableRow,
+} from "@heroui/react";
+import React, { useState } from "react";
 
-const contact = () => {
+const Contact = () => {
+  const [contacts] = useState([
+    {
+      id: 1,
+      name: "Ali Rehman",
+      phone: "+92 300 1234567",
+      email: "ali2343@gmail.com",
+    },
+    {
+      id: 2,
+      name: "Fatima Sheikh",
+      phone: "+92 310 9876543",
+      email: "fatima449@gmail.com",
+    },
+    {
+      id: 3,
+      name: "Bilal Sajid",
+      phone: "+92 321 4567890",
+      email: "bilal321@gmail.com",
+    },
+    {
+        id: 4,
+        name: "Kamran Ahmad",
+        phone: "+92 324 4578690",
+        email: "ka3399203@gmail.com",
+      },
+      {
+        id: 3,
+        name: "Ahmad Hussain",
+        phone: "+92 333 7213456",
+        email: "ahmadhussain@gmail.com",
+      },
+  ]);
+
   return (
-    <div>
-      contact page
-    </div>
-  )
-}
+    <Table>
+      <TableHeader>
+        <TableColumn>#</TableColumn>
+        <TableColumn>Name</TableColumn>
+        <TableColumn>Phone</TableColumn>
+        <TableColumn>Email</TableColumn>
+      </TableHeader>
 
-export default contact
+      <TableBody emptyContent="No Contact Found">
+        {contacts.map((contact, index) => (
+          <TableRow className="hover:bg-gray-100 transition-colors" key={contact.id}>
+            <TableCell>{index + 1}</TableCell>
+            <TableCell>{contact.name}</TableCell>
+            <TableCell>{contact.phone}</TableCell>
+            <TableCell>{contact.email}</TableCell>
+          </TableRow>
+        ))}
+      </TableBody>
+    </Table>
+  );
+};
+
+export default Contact;
