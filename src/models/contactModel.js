@@ -9,13 +9,13 @@ const contactSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  address: {
+  email: {
     type: String,
     required: true,
   },
 });
 
 const contactModel =
-  mongoose.model.contactModel || mongoose.model("contactModel", contactSchema);
+  mongoose.models.contactModel || mongoose.model("contactModel", contactSchema);
 
 export default contactModel;
