@@ -7,56 +7,38 @@ import {
   TableHeader,
   TableRow,
 } from "@heroui/react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 const Contact = () => {
-  const [contacts] = useState([
-    {
-      id: 1,
-      name: "Ali Rehman",
-      phone: "+92 300 1234567",
-      email: "ali2343@gmail.com",
-    },
-    {
-      id: 2,
-      name: "Fatima Sheikh",
-      phone: "+92 310 9876543",
-      email: "fatima449@gmail.com",
-    },
-    {
-      id: 3,
-      name: "Bilal Sajid",
-      phone: "+92 321 4567890",
-      email: "bilal321@gmail.com",
-    },
-    {
-        id: 4,
-        name: "Kamran Ahmad",
-        phone: "+92 324 4578690",
-        email: "ka3399203@gmail.com",
-      },
-      {
-        id: 5,
-        name: "Ahmad Hussain",
-        phone: "+92 333 7213456",
-        email: "ahmadhussain@gmail.com",
-      },
-      {
-        id: 6,
-        name: "Rahim Mahmood",
-        phone: "+92 335 1236547",
-        email: "rahimmahmood@gmail.com",
-      },
-      {
-        id: 7,
-        name: "Sana khan",
-        phone: "+92 336 9876543",
-        email: "sana336@gmail.com",
-      }
+  const [contacts, setContacts] = useState([]);
 
-  ]);
+  async function FormData(setContacts) {
+    try {
+      const response = await fetch("/api/handleContactForm", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        toast.error(response.message);
+      }
+      const data = await response.json();
+      setContacts(data.contacts);
+    } catch (error) {
+      toast.error("Failed to show data.");
+    }
+  }
+
+  useEffect(() => {
+    FormData(setContacts);
+  }, []);
 
   return (
+    <div>
+
     <Table>
       <TableHeader>
         <TableColumn>#</TableColumn>
@@ -67,7 +49,10 @@ const Contact = () => {
 
       <TableBody emptyContent="No Contact Found">
         {contacts.map((contact, index) => (
-          <TableRow className="hover:bg-gray-100 transition-colors" key={contact.id}>
+          <TableRow
+            className="hover:bg-gray-100 transition-colors"
+            key={contact.id}
+          >
             <TableCell>{index + 1}</TableCell>
             <TableCell>{contact.name}</TableCell>
             <TableCell>{contact.phone}</TableCell>
@@ -76,6 +61,7 @@ const Contact = () => {
         ))}
       </TableBody>
     </Table>
+        </div>
   );
 };
 

@@ -29,6 +29,10 @@ const ContactForm = () => {
 
       toast.success("Form submitted successfully")
 
+      setName("")
+      setEmail("")
+      setPhone("")
+
     } catch (error) {
       toast.error("Failed to submit form.");
     }
@@ -120,6 +124,7 @@ const ContactForm = () => {
               type="text"
               placeholder="Name"
               className="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              value={name}
               data-aos="fade-up"
               data-aos-delay="900"
               onChange={(e) => setName(e.target.value)}
@@ -128,6 +133,7 @@ const ContactForm = () => {
               type="text"
               placeholder="Phone"
               className="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              value={phone}
               data-aos="fade-up"
               data-aos-delay="1000"
               onChange={(e) => setPhone(e.target.value)}
@@ -135,6 +141,7 @@ const ContactForm = () => {
             <input
               type="text"
               placeholder="Email"
+              value={email}
               className="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
               data-aos="fade-up"
               data-aos-delay="1100"

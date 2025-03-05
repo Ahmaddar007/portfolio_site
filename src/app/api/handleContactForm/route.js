@@ -2,6 +2,24 @@ import dbConnection from "@/config/dbConnection";
 import contactModel from "@/models/contactModel";
 import { NextResponse } from "next/server";
 
+export async function GET() {
+  try {
+    // Connect to the database
+    await dbConnection();
+
+    // Fetch all contacts from the database
+    const contacts = await contactModel.find({});
+
+    // Return all contacts in an object
+    return NextResponse.json({ contacts });
+  } catch (error) {
+    console.error("Error fetching contacts:", error);
+    return NextResponse.json(
+      { error: "Failed to fetch contacts" },
+      { status: 500 }
+    );
+  }
+}
 export async function POST(req) {
   try {
     // Connect to the database
