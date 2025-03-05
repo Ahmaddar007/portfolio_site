@@ -29,16 +29,6 @@ const checkOutSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  orderStatus: {
-    type: String,
-    enum: ["Pending", "Processing", "Shipped", "Delivered", "Cancelled"],
-    default: "Pending",
-  },
-  paymentMethod: {
-    type: String,
-    enum: ["Cash on Delivery", "Credit Card", "Bank Transfer"],
-    required: true,
-  },
   createdAt: {
     type: Date,
     default: Date.now,
