@@ -36,11 +36,24 @@ const Contact = () => {
         email: "ka3399203@gmail.com",
       },
       {
-        id: 3,
+        id: 5,
         name: "Ahmad Hussain",
         phone: "+92 333 7213456",
         email: "ahmadhussain@gmail.com",
       },
+      {
+        id: 6,
+        name: "Rahim Mahmood",
+        phone: "+92 335 1236547",
+        email: "rahimmahmood@gmail.com",
+      },
+      {
+        id: 7,
+        name: "Sana khan",
+        phone: "+92 336 9876543",
+        email: "sana336@gmail.com",
+      }
+
   ]);
 
   return (
