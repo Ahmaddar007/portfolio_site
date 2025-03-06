@@ -31,17 +31,11 @@ const Products = () => {
       toast.error("Failed to submit form.");
     }
   }
-  async function editProduct(productId){
-    
+  async function editProduct(productId) {
     try {
-      
-    } catch (error) {
-      
-    }
+    } catch (error) {}
   }
-  async function deleteProduct(productId){
-
-  }
+  async function deleteProduct(productId) {}
   useEffect(() => {
     getProducts();
   }, []);
@@ -93,10 +87,16 @@ const Products = () => {
               <TableCell>{product.metaDescription}</TableCell>
               <TableCell>
                 <div className="flex gap-2">
-                  <button className="bg-yellow-300 p-2 rounded-lg">
+                  <button
+                    className="bg-yellow-300 p-2 rounded-lg"
+                    onClick={() => editProduct(product.id)}
+                  >
                     <Pencil />
                   </button>
-                  <button className="bg-red-400 p-2 rounded-lg">
+                  <button
+                    className="bg-red-400 p-2 rounded-lg"
+                    onClick={() => deleteProduct(product.id)}
+                  >
                     <Trash2 />
                   </button>
                 </div>
