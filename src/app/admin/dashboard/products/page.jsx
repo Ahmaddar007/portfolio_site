@@ -69,17 +69,27 @@ const Products = () => {
               <TableCell>{product.stockStatus}</TableCell>
               <TableCell>{product.category}</TableCell>
               <TableCell>{product.tags}</TableCell>
-              <TableCell><p>??</p></TableCell>
+              <TableCell>
+                <p>??</p>
+              </TableCell>
               <TableCell>{product.sizes}</TableCell>
-              <TableCell><div className="overflow-x-scroll w-[100px]">{product.thumbnail}</div></TableCell>
+              <TableCell>
+                <div className="overflow-x-scroll w-[100px]">
+                  {product.thumbnail}
+                </div>
+              </TableCell>
               <TableCell>{product.metaTitle}</TableCell>
               <TableCell>{product.metaDescription}</TableCell>
               <TableCell>
                 <div className="flex gap-2">
-                <button className="bg-yellow-500 p-2 rounded-lg"><Pencil/></button> 
-                <button className="bg-red-500 p-2 rounded-lg"><Trash2 /></button> 
+                  <button className="bg-yellow-500 p-2 rounded-lg">
+                    <Pencil />
+                  </button>
+                  <button className="bg-red-500 p-2 rounded-lg">
+                    <Trash2 />
+                  </button>
                 </div>
-                </TableCell>
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
