@@ -34,11 +34,27 @@ export async function POST(req) {
       JSON.stringify({ success: true, product: newProduct }),
       { status: 201 }
     );
-    
   } catch (error) {
     console.error("Error uploading product:", error);
     return new NextResponse(
       JSON.stringify({ error: "Failed to upload product" }),
+      { status: 500 }
+    );
+  }
+}
+
+export async function GET() {
+  try {
+    // Connect to the database
+    await dbConnection();
+    // Fetch all products from the database
+    const products = await ProductModel.find({});
+    console.log(products, "products");
+    return NextResponse.json(products);
+  } catch (error) {
+    console.error("Error fetching Products:", error);
+    return NextResponse.json(
+      { error: "Failed to fetch Products" },
       { status: 500 }
     );
   }
