@@ -4,8 +4,12 @@ import { useState } from "react";
 import { CldUploadWidget } from "next-cloudinary";
 import MDEditor from "@uiw/react-md-editor";
 import ActionButton from "./ActionButton";
+import { Button, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from "@heroui/react";
+import { ChevronDown } from "lucide-react";
 
 const NewProducts = () => {
+
+  const [ collectionName , setCollectionName ] = useState("Featured")
 
   const [productData, setProductData] = useState({
     name: "",
@@ -14,6 +18,7 @@ const NewProducts = () => {
     salePrice: "",
     stockStatus: "instock",
     category: "category1",
+    collectionName: collectionName,
     tags: [],
     variations: [],
     sizes: [], // New field for sizes
@@ -301,6 +306,35 @@ const NewProducts = () => {
             ))}
           </div>
         </div>
+
+        {/* Meta Title */}
+        <div className="mb-6">
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Collection Name
+          </label>
+          <Dropdown placement="bottom-start">
+              <DropdownTrigger>
+                <Button
+                  variant="bordered"
+                  className="w-full flex justify-between"
+                >
+                  {collectionName}
+                  <ChevronDown className="text-gray-500" />
+                </Button>
+              </DropdownTrigger>
+              <DropdownMenu>
+                {["Featured", "Trending"].map((option) => (
+                  <DropdownItem
+                    key={option}
+                    onPress={() => setCollectionName(option)}
+                  >
+                    {option}
+                  </DropdownItem>
+                ))}
+              </DropdownMenu>
+            </Dropdown>
+        </div>
+
 
         {/* Meta Title */}
         <div className="mb-6">
