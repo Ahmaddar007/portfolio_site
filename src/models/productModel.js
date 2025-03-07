@@ -25,8 +25,8 @@ const productSchema = new mongoose.Schema(
     collectionName: {
       type: String, // Featured Collection , Top Rating etc
     },
-    category: {
-      type: String,
+    categories: {
+      type: [String],
       required: true,
     },
     tags: {
