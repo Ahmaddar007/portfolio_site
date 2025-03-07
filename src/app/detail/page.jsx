@@ -3,77 +3,37 @@
 import { Button, Spinner } from "@heroui/react";
 import React, { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
-import detailimage from "@/../../public/product.png";
-import Image from "next/image";
 import { ChevronLeft, ChevronRight, FolderUp, Heart } from "lucide-react";
 import BuyAction from "./BuyAction";
 import { useSearchParams } from "next/navigation";
 
 const Detail = () => {
-  const [product, setProduct] = useState(
-    {
-      _id: "67cb54d413cc19ab2a99dfcf",
-      name: "The Best Hoodies for Work or Play - WIRED",
-      description:
-        "With active noise cancellation (ANC) technology, you can block out external noise and focus on your music, calls, or work without distractions. The ergonomic design ensures maximum comfort, even during long listening sessions.",
-      regularPrice: 120,
-      salePrice: 100,
-      stockStatus: "instock",
-      collectionName: "Featured",
-      categories: ["Men", "Women"],
-      tags: ["tag 1", "tag 2", "tag 3"],
-      variations: [
-        {
-          colorName: "Black",
-          colorCode: "#000",
-          image:
-            "https://res.cloudinary.com/dr0vskm6n/image/upload/v1741378667/78c776b349e17caac12645874f7274b7.jpg_720x720q80_qjywdl.jpg",
-          _id: "67cb54d413cc19ab2a99dfd0",
-        },
-        {
-          colorName: "Red",
-          colorCode: "#ff0000",
-          image:
-            "https://res.cloudinary.com/dr0vskm6n/image/upload/v1741378680/4122-22-1970-Heavy-Cropped-Flame-Red-Basic-Hoodie-1_1_ekztsj.webp",
-          _id: "67cb54d413cc19ab2a99dfd1",
-        },
-      ],
-      sizes: ["S", "M", "L"],
-      thumbnail:
-        "https://res.cloudinary.com/dr0vskm6n/image/upload/v1741378719/78c776b349e17caac12645874f7274b7.jpg_720x720q80_xbww5x.jpg",
-      metaTitle: "Hanes Men's EcoSmart",
-      metaDescription:
-        "With active noise cancellation (ANC) technology, you can block out external noise and focus on your music, calls, or work without distractions. The ergonomic design ensures maximum comfort, even during long listening sessions.",
-      createdAt: "2025-03-07T20:19:32.988Z",
-      updatedAt: "2025-03-07T20:19:32.988Z",
-      __v: 0,
-    },
-  );
+  const [product, setProduct] = useState();
   
   const [variantImmage, setVariantImage] = useState()
 
 
   const searchParams = useSearchParams();
 
-  // useEffect(() => {
-  //   // Get the product_id from the query parameters
-  //   const productIdFromUrl = searchParams.get("product_id");
+  useEffect(() => {
+    // Get the product_id from the query parameters
+    const productIdFromUrl = searchParams.get("product_id");
 
-  //   // Set the product_id in the state
-  //   if (productIdFromUrl) {
-  //     getProduct(productIdFromUrl); // Call getProduct with the productIdFromUrl
-  //   }
-  // }, [searchParams]);
+    // Set the product_id in the state
+    if (productIdFromUrl) {
+      getProduct(productIdFromUrl); // Call getProduct with the productIdFromUrl
+    }
+  }, [searchParams]);
 
-  // async function getProduct(productId) {
-  //   try {
-  //     const response = await fetch(`/api/getProduct?product_id=${productId}`);
-  //     const data = await response.json();
-  //     setProduct(data);
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // }
+  async function getProduct(productId) {
+    try {
+      const response = await fetch(`/api/getProduct?product_id=${productId}`);
+      const data = await response.json();
+      setProduct(data);
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   return (
     <main className="p-[9%] w-full bg-gray-50">

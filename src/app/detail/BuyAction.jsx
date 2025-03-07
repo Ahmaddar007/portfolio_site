@@ -4,7 +4,7 @@ import React, { useState } from "react";
 const BuyAction = ({product , setVariantImage}) => {
 
       // State for selected color, size, and quantity
-  const [selectedColor, setSelectedColor] = useState("#000000"); // Default color is black
+  const [selectedColor, setSelectedColor] = useState(""); // Default color is black
   const [selectedSize, setSelectedSize] = useState("8"); // Default size is 8
   const [quantity, setQuantity] = useState(1); // Default quantity is 1
 
@@ -54,6 +54,8 @@ const BuyAction = ({product , setVariantImage}) => {
   
     // Save updated cart back to localStorage
     localStorage.setItem("cart", JSON.stringify(cart));
+
+    location.replace(`/checkout?product_id=${product._id}`)
   
     console.log("Updated Cart:", cart);
   };
