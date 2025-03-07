@@ -50,6 +50,8 @@ const Detail = () => {
     },
   );
   
+  const [variantImmage, setVariantImage] = useState()
+
 
   const searchParams = useSearchParams();
 
@@ -83,7 +85,7 @@ const Detail = () => {
             <div className="prod_img flex">
               <div className="w-full">
                 <img
-                  src={product.thumbnail}
+                  src={variantImmage? variantImmage : product.thumbnail}
                   alt="Product Image"
                   className="w-[90%] rounded-lg"
                 />
@@ -157,7 +159,7 @@ const Detail = () => {
                 <p className="text-gray-600 mt-2">{product.description}</p>
               </div>
             </div>
-            <BuyAction product={product} />
+            <BuyAction setVariantImage={setVariantImage} product={product} />
           </div>
         </div>
       ) : (

@@ -1,7 +1,7 @@
 import { Button } from "@heroui/react";
 import React, { useState } from "react";
 
-const BuyAction = ({product , setProduct}) => {
+const BuyAction = ({product , setVariantImage}) => {
 
       // State for selected color, size, and quantity
   const [selectedColor, setSelectedColor] = useState("#000000"); // Default color is black
@@ -9,8 +9,9 @@ const BuyAction = ({product , setProduct}) => {
   const [quantity, setQuantity] = useState(1); // Default quantity is 1
 
   // Handle color selection
-  const handleColorSelect = (color) => {
-    setSelectedColor(color);
+  const handleColorSelect = ({name , color , image} ) => {
+    setSelectedColor(name);
+    setVariantImage(image)
   };
 
   // Handle size selection
@@ -73,7 +74,13 @@ const BuyAction = ({product , setProduct}) => {
             selectedColor === color.colorName ? "ring-2 ring-[#B4531A]" : ""
           }`}
           style={{ backgroundColor: color.colorCode }}
-          onClick={() => handleColorSelect(color.colorName , color.colorCode)}
+          onClick={() =>
+            handleColorSelect({
+              name: color.colorName,
+              color: color.colorCode,
+              image: color.image,
+            })
+          }
         ></button>
       ))}
 
