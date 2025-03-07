@@ -74,9 +74,7 @@ const Products = () => {
               <TableCell>{product.stockStatus}</TableCell>
               <TableCell>{product.category}</TableCell>
               <TableCell>{product.tags}</TableCell>
-              <TableCell>
-                <p>??</p>
-              </TableCell>
+              <TableCell>{product.variation}</TableCell>
               <TableCell>{product.sizes}</TableCell>
               <TableCell>
                 <div className="overflow-x-scroll w-[100px]">
