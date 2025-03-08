@@ -97,14 +97,15 @@ export async function PUT(req) {
     );
   }
 }
-export async function Delete(req) {
+export async function DELETE(req) {
   try {
     // Connect to the database
     await dbConnection();
     // Parse the request body
-    const { productId } = await req.json();
+    const { id } = await req.json();
+    console.log(id,"id")
     // Delete the product document
-    await ProductModel.findByIdAndDelete(productId);
+    await ProductModel.findByIdAndDelete(id);
     // Return success response
     return new NextResponse(JSON.stringify({ success: true }), { status: 200 });
   } catch (error) {

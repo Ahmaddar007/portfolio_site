@@ -29,10 +29,19 @@ export async function POST(req) {
   }
 }
 
-export async function GET(){
-    try {
-        
-    } catch (error) {
-        
-    }
+export async function GET() {
+  try {
+    // Connect to the database
+    await dbConnection();
+    // Fetch all newsletters from the database
+    const newsletters = await newsletterModel.find({});
+    // Return newsletters response
+    return NextResponse.json(newsletters);
+  } catch (error) {
+    console.error("Error Fetching Newsletter:", error);
+    return NextResponse.json(
+      { error: "Failed to fetching Newsletter" },
+      { status: 500 }
+    );
+  }
 }

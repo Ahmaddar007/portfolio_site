@@ -7,11 +7,13 @@ import {
   TableRow,
   TableCell,
 } from "@heroui/react";
-import { Pencil, Trash2 } from "lucide-react";
+import { Check, Pencil, Trash2 } from "lucide-react";
 import React, { useState, useEffect } from "react";
+import { toast } from "react-toastify";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
+  const [isEditing, setIsEditing] = useState(false);
 
   async function getProducts() {
     try {
@@ -31,14 +33,40 @@ const Products = () => {
       toast.error("Failed to submit form.");
     }
   }
-  async function editProduct(productId) {
+  async function editProduct() {
+    setIsEditing(false);
     try {
     } catch (error) {}
   }
-  async function deleteProduct(productId) {}
+  async function deleteProduct(productId) {
+    try {
+      const response = await fetch("/api/handleProduct", {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ productId }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || "Failed to delete product");
+      }
+
+      toast.success("Product deleted successfully");
+
+      // Refresh product list after deletion
+      getProducts();
+    } catch (error) {
+      toast.error("Failed to delete product");
+    }
+  }
+
   useEffect(() => {
     getProducts();
   }, []);
+
   return (
     <div>
       <button onClick={() => console.log(products)}>product</button>
@@ -81,16 +109,29 @@ const Products = () => {
                   {product.thumbnail}
                 </div>
               </TableCell>
-              <TableCell>{product.metaTitle}</TableCell>
+              <TableCell>
+                {isEditing === true ? (
+                  <input type="text" />
+                ) : (
+                  <p>{product.metaTitle}</p>
+                )}
+              </TableCell>
               <TableCell>{product.metaDescription}</TableCell>
               <TableCell>
                 <div className="flex gap-2">
-                  <button
-                    className="bg-yellow-300 p-2 rounded-lg"
-                    onClick={() => editProduct(product.id)}
-                  >
-                    <Pencil />
-                  </button>
+                  {isEditing === false ? (
+                    <button
+                      onClick={() => setIsEditing(true)}
+                      className="text-gray-600"
+                    >
+                      <Pencil />
+                    </button>
+                  ) : (
+                    <button onClick={editProduct} className="text-gray-600">
+                      <Check />
+                    </button>
+                  )}
+
                   <button
                     className="bg-red-400 p-2 rounded-lg"
                     onClick={() => deleteProduct(product.id)}

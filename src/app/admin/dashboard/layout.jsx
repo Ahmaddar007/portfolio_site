@@ -4,7 +4,7 @@ import React from "react";
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LogOut, X, Box, CopyPlus, Contact, ShoppingBag  } from "lucide-react"; // Assuming you're using Lucide icons
+import { LogOut, X, Box, CopyPlus, Contact, ShoppingBag, Mail  } from "lucide-react"; // Assuming you're using Lucide icons
 import { Home } from "lucide-react";
 import { Button } from "@heroui/react";
 
@@ -39,6 +39,11 @@ const Layout = ({ children }) => {
       name: "Checkout",
       path: "/admin/dashboard/checkout",
       icon: <ShoppingBag className="w-5 h-5 text-gray-600" />,
+    },
+    {
+      name: "NewsLetter",
+      path: "/admin/dashboard/newsletter",
+      icon: <Mail className="w-5 h-5 text-gray-600" />,
     },
   ];
 
