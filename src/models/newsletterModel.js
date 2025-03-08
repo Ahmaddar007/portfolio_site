@@ -11,4 +11,4 @@ const newsletterModel =
   mongoose.models.newsletterModel ||
   mongoose.model("newsletterModel", newletterSchema);
 
-export default newletterModel;
+export default newsletterModel;

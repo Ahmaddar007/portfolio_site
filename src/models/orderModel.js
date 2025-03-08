@@ -17,26 +17,18 @@ const checkOutSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  productTitle: {
+  paymentMethod: {
     type: String,
-    required: true,
   },
-  productQuantity: {
-    type: String,
-    required: true,
-  },
-  totalPrice: {
-    type: String,
-    required: true,
-  },
+
   createdAt: {
     type: Date,
     default: Date.now,
   },
 });
 
-const checkOutModel =
-  mongoose.models.checkOutModel ||
-  mongoose.model("checkOutModel", checkOutSchema);
+const ordersModel =
+  mongoose.models.ordersModel ||
+  mongoose.model("ordersModel", checkOutSchema);
 
-export default checkOutModel;
+export default ordersModel;
