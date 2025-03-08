@@ -46,7 +46,7 @@ const Newsletter = () => {
       {isLoading ? (
         <div className="w-full h-screen bg-white opacity-30 flex justify-center items-center">
           <Spinner className="!text-blue-600" size="lg" color="primary" />
-          <p className="text-2xl text-black font-semibold opacity-100">
+          <p className="text-2xl text-black font-semibold opacity-100 mx-3">
           Loading..
           </p>
         </div>

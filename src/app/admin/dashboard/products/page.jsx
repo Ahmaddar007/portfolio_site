@@ -38,6 +38,7 @@ const Products = () => {
     try {
     } catch (error) {}
   }
+
   async function deleteProduct(id) {
     try {
       const response = await fetch("/api/handleProduct", {
@@ -49,7 +50,7 @@ const Products = () => {
       });
 
       const data = await response.json();
-
+      console.log(data);
       if (!response.ok) {
         throw new Error(data.message || "Failed to delete product");
       }
@@ -70,7 +71,7 @@ const Products = () => {
   return (
     <div>
       <button onClick={() => console.log(products)}>product</button>
-      <Table>
+      <Table className="text-nowrap">
         <TableHeader>
           <TableColumn>#</TableColumn>
           <TableColumn>Name</TableColumn>
@@ -88,7 +89,7 @@ const Products = () => {
           <TableColumn>Actions</TableColumn>
         </TableHeader>
 
-        <TableBody emptyContent="No Contact Found">
+        <TableBody emptyContent="No Product Found">
           {products.map((product, index) => (
             <TableRow
               className="hover:bg-gray-100 transition-colors"
@@ -97,8 +98,20 @@ const Products = () => {
               <TableCell>{index + 1}</TableCell>
               <TableCell>{product.name}</TableCell>
               <TableCell>{product.description}</TableCell>
-              <TableCell>{product.regularPrice}</TableCell>
-              <TableCell>{product.salePrice}</TableCell>
+              <TableCell>
+                {isEditing === true ? (
+                  <input type="text" />
+                ) : (
+                  <p>{product.regularPrice}</p>
+                )}
+              </TableCell>
+              <TableCell>
+                {isEditing === true ? (
+                  <input type="text" />
+                ) : (
+                  <p>{product.salePrice}</p>
+                )}
+              </TableCell>
               <TableCell>{product.stockStatus}</TableCell>
               <TableCell>{product.category}</TableCell>
               <TableCell>{product.tags}</TableCell>
@@ -116,13 +129,19 @@ const Products = () => {
                   <p>{product.metaTitle}</p>
                 )}
               </TableCell>
-              <TableCell>{product.metaDescription}</TableCell>
+              <TableCell>
+                {isEditing === true ? (
+                  <input type="text" />
+                ) : (
+                  <p>{product.metaDescription}</p>
+                )}
+              </TableCell>
               <TableCell>
                 <div className="flex gap-2">
                   {isEditing === false ? (
                     <button
                       onClick={() => setIsEditing(true)}
-                      className="text-gray-600"
+                      className="text-gray-600 p-2 bg-yellow-400 rounded-lg"
                     >
                       <Pencil />
                     </button>
@@ -133,8 +152,8 @@ const Products = () => {
                   )}
 
                   <button
-                    className="bg-red-400 p-2 rounded-lg"
-                    onClick={() => deleteProduct(product.id)}
+                    className="bg-red-400 p-2 rounded-lg text-gray-600"
+                    onClick={() => deleteProduct(product._id)}
                   >
                     <Trash2 />
                   </button>
