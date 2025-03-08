@@ -38,14 +38,14 @@ const Products = () => {
     try {
     } catch (error) {}
   }
-  async function deleteProduct(productId) {
+  async function deleteProduct(id) {
     try {
       const response = await fetch("/api/handleProduct", {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ productId }),
+        body: JSON.stringify({ id }),
       });
 
       const data = await response.json();
