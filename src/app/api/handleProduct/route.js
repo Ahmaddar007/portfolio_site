@@ -65,7 +65,10 @@ export async function PUT(req) {
     // Connect to the database
     await dbConnection();
     // Parse the request body
-    const { productId, productData } = await req.json();
+    const { salePrice , id } = await req.json();
+
+    console.log(salePrice , id,"salePrice , id")
+    return
     // Validate required fields
     if (
       !productData.name ||

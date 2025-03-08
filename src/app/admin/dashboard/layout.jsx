@@ -68,7 +68,7 @@ const Layout = ({ children }) => {
             )}
 
             <aside
-              className={`fixed pt-2 lg:sticky lg:top-0 lg:left-0 lg:h-screen lg:w-64 w-64 h-full bg-white border-r border-gray-200 z-30 transform transition-transform duration-300 ease-in-out ${
+              className={`fixed w-[15%] pt-2 lg:sticky lg:top-0 lg:left-0 lg:h-screen  h-full bg-white border-r border-gray-200 z-30 transform transition-transform duration-300 ease-in-out ${
                 sidebarOpen ? "translate-x-0" : "-translate-x-full"
               } lg:translate-x-0`}
             >
@@ -121,7 +121,7 @@ const Layout = ({ children }) => {
         )}
 
         {/* Main Content */}
-        <div className="flex-1 p-4 bg-gray-50 min-h-screen">
+        <div className="p-4 w-[85%] bg-gray-50 min-h-screen">
           {/* Mobile Menu Toggle Button */}
           <Button
             className="lg:hidden p-2 bg-white border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 mb-4"
@@ -146,6 +146,7 @@ const Layout = ({ children }) => {
           {/* Page Content */}
           {children}
         </div>
+
       </div>
     </>
   );

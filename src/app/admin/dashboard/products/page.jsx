@@ -13,6 +13,7 @@ import { toast } from "react-toastify";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
+  const [salePrice, setSalePrice] = useState();
   const [isEditing, setIsEditing] = useState(false);
 
   async function getProducts() {
@@ -33,10 +34,30 @@ const Products = () => {
       toast.error("Failed to submit form.");
     }
   }
-  async function editProduct() {
-    setIsEditing(false);
+  async function editProduct(id) {
+    setIsEditing(true);
+
     try {
-    } catch (error) {}
+      const response = await fetch("/api/handleProduct", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ salePrice, id }),
+      });
+
+      if (!response.ok) {
+        toast.error("Failed to update.");
+        return;
+      }
+
+      toast.success("Successfully updated");
+      getProducts();
+      setIsEditing(false);
+    } catch (error) {
+      console.log(error);
+      toast.error("Failed to update");
+    }
   }
 
   async function deleteProduct(id) {
@@ -107,7 +128,14 @@ const Products = () => {
               </TableCell>
               <TableCell>
                 {isEditing === true ? (
-                  <input type="text" />
+                  <input
+                  type="text"
+                  value={salePrice}
+                  onChange={(e) => {
+                    setSalePrice(e.target.value);
+                    console.log(e.target.value); // Logs the latest value correctly
+                  }}
+                />
                 ) : (
                   <p>{product.salePrice}</p>
                 )}
@@ -143,7 +171,7 @@ const Products = () => {
                       onClick={() => setIsEditing(true)}
                       className="text-gray-600 p-2 bg-yellow-400 rounded-lg"
                     >
-                      <Pencil />
+                      <Pencil onClick={() => editProduct(product._id)} />
                     </button>
                   ) : (
                     <button onClick={editProduct} className="text-gray-600">
