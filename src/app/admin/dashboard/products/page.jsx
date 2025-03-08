@@ -129,16 +129,18 @@ const Products = () => {
                 key={index.id}
               >
                 <TableCell>{index + 1}</TableCell>
-                <TableCell>{product.name}</TableCell>
-                <TableCell>{product.description}</TableCell>
-                <TableCell>
+                <TableCell className="text-nowrap">{product.name}</TableCell>
+                <TableCell className="text-nowrap">
+                  {product.description}
+                </TableCell>
+                <TableCell className="text-nowrap">
                   {isEditing === true ? (
                     <input type="text" />
                   ) : (
                     <p>{product.regularPrice}</p>
                   )}
                 </TableCell>
-                <TableCell>
+                <TableCell className="text-nowrap">
                   {isEditing === true ? (
                     <input
                       type="text"
@@ -152,31 +154,37 @@ const Products = () => {
                     <p>{product.salePrice}</p>
                   )}
                 </TableCell>
-                <TableCell>{product.stockStatus}</TableCell>
-                <TableCell>{product.category}</TableCell>
-                <TableCell>{product.tags}</TableCell>
-                <TableCell>{product.variation}</TableCell>
-                <TableCell>{product.sizes}</TableCell>
-                <TableCell>
+                <TableCell className="text-nowrap">
+                  {product.stockStatus}
+                </TableCell>
+                <TableCell className="text-nowrap">
+                  {product.category}
+                </TableCell>
+                <TableCell className="text-nowrap">{product.tags}</TableCell>
+                <TableCell className="text-nowrap">
+                  {product.variation}
+                </TableCell>
+                <TableCell className="text-nowrap">{product.sizes}</TableCell>
+                <TableCell className="text-nowrap">
                   <div className="overflow-x-scroll w-[100px]">
                     {product.thumbnail}
                   </div>
                 </TableCell>
-                <TableCell>
+                <TableCell className="text-nowrap">
                   {isEditing === true ? (
                     <input type="text" />
                   ) : (
                     <p>{product.metaTitle}</p>
                   )}
                 </TableCell>
-                <TableCell>
+                <TableCell className="text-nowrap">
                   {isEditing === true ? (
                     <input type="text" />
                   ) : (
                     <p>{product.metaDescription}</p>
                   )}
                 </TableCell>
-                <TableCell>
+                <TableCell className="text-nowrap">
                   <div className="flex gap-2">
                     {isEditing === false ? (
                       <button
